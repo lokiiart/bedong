@@ -1,5 +1,4 @@
 {
     "port": 4000,
-    "log_file": "/log/awesome.log",
     "environment": "development"
 }
