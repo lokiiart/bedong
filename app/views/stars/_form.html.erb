@@ -68,8 +68,10 @@
   </div>
   <div class=""form-group>
       已有标签：
+      <% if @star.id %>
     <% @tags.each do |t| %>
         <%= t.tagname %>,
+    <% end %>
     <% end %>
   </div>
 
