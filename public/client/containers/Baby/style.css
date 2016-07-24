@@ -1,0 +1,56 @@
+.toStar{
+    background-color: #FC2875;
+    color:#fff;
+    padding: 2px 8px;
+}
+
+.toStar a{
+    color:#FEEE35;
+}
+
+
+.toStarTitle{
+    position: relative;
+}
+
+.toStarTitle h3{
+    display: inline-block;
+    line-height: 0;
+}
+
+.toStarTitle span{
+    display:inline-block;
+    position: absolute;
+    right:0;
+    top: .2em;
+    font-size: .8em;
+    vertical-align: bottom;
+}
+
+
+.toStarContent img{
+    float: left;
+    margin: .5em;
+}
+
+.toStarContent .rightContent{
+    margin-left: 86px;
+}
+
+.block{
+    
+}
+
+.blockTitle{
+    color: #fff;
+    background-color: #636363;
+    font-size: 1rem;
+    font-weight: bolder;
+    padding: 5px .8rem;
+    margin: 0;
+}
+
+.cartWrapper > div{
+    width: 100%;
+    height: 100%;
+}

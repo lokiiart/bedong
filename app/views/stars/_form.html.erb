@@ -1,0 +1,122 @@
+<%= form_for @star, :html => { :class => "form-horizontal star" } do |f| %>
+
+  <% if @star.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@star.errors.count, "error") %> prohibited this star from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @star.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :avatar, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :avatar, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:avatar) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :summart, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :summart, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:summart) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :favorite, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :favorite, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:favorite) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :score, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :score, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:score) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :intro_image, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :intro_image, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:intro_image) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :baby_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :baby_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:baby_id) %>
+  </div>
+  <div class=""form-group>
+      已有标签：
+    <% @tags.each do |t| %>
+        <%= t.tagname %>,
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                stars_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
+
+<% if @star.id %>
+<%= form_for @tag, :html => { :class => "form-horizontal tag" } do |f| %>
+
+  <% if @tag.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@tag.errors.count, "error") %> prohibited this tag from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @tag.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :tagname, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+
+        <input name="star_id" type="hidden" value=<%= @star.id %> />
+      <%= f.text_field :tagname, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tagname) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                tags_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
+
+<% end %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  phone: MyString
+  customer: MyString
+  price: 1
+  payment: MyString
+  address: MyString
+  payoff: false
+  flow: MyString
+
+two:
+  phone: MyString
+  customer: MyString
+  price: 1
+  payment: MyString
+  address: MyString
+  payoff: false
+  flow: MyString

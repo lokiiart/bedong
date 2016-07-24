@@ -1,0 +1,25 @@
+.area{
+    margin-top: .3em;
+}
+
+.wrapper{
+    display: flex;
+    margin-bottom: .4em;
+}
+
+.title{
+    padding: 5px 0;
+    padding-right: 5px;
+    border-right: 2px solid #ff0090;
+    width: 40px;
+    margin: auto;
+}
+.content{
+    flex:1;
+    margin-left: 12px;
+}
+
+.submit{
+    width: 80px;
+    margin: auto;
+}

@@ -1,0 +1,2 @@
+class Fool < ApplicationRecord
+end

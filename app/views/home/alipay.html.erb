@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>支付宝付款</title>
+    </head>
+    <body>
+        <form id="alipay_form" name ="alipay_form" action="https://mapi.alipay.com/gateway.do?_input_charset=utf-8" method="get">
+            <% @alipay_order.each do |key ,value| %>
+                <input type="hidden" name="<%= key %>" value="<%= value %>">
+            <% end %>
+            <input type="submit" value="确认" />
+        </form>
+    </body>
+    <script>
+     document.forms['alipay_form'].submit();
+    </script>
+</html>

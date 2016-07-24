@@ -1,0 +1,65 @@
+.star{
+
+}
+.star > div{
+  background-color: #fff;
+}
+.summary{
+  background: -webkit-linear-gradient(#6b0c6a, #fb67bf);
+  background: linear-gradient(#6b0c6a, #fb67bf);
+}
+
+.avatar{
+  padding: 20px;
+  float:left;
+  height: 100%;
+}
+
+.info{
+  color:#fff;
+  padding-top: 20px;
+  padding-right: 20px;
+  margin-left: 130px;
+}
+
+.info h3{
+  line-height: 0;
+}
+
+.info p{
+  font-size: .6rem;
+  font-weight: bold;
+}
+
+.likeinfo{
+    position: relative;
+    height: 3rem;
+}
+
+.tags {
+    padding: 1rem;
+}
+.introduce h3,
+.photos h3,
+.tags h3{
+    line-height: 0;
+    margin-bottom: 1.5rem;
+    color: #ff0090;
+}
+
+.introduce p{
+    color: #b7b7b7;
+    font-weight: bold;
+    text-indent:2em;
+}
+
+.introduce, .photos{
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.testTile{
+    background-color: #ccc;
+    width: 100%;
+    height: 100%;
+}

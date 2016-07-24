@@ -1,0 +1,62 @@
+<%= form_for @commet, :html => { :class => "form-horizontal commet" } do |f| %>
+
+  <% if @commet.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@commet.errors.count, "error") %> prohibited this commet from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @commet.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :customer_name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :customer_name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:customer_name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :customer_avatar, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :customer_avatar, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:customer_avatar) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :star_name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :star_name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:star_name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :virtual_time, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :virtual_time, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:virtual_time) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :content, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:content) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                commets_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

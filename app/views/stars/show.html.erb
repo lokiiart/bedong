@@ -1,0 +1,39 @@
+<%- model_class = Star -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @star.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:avatar) %>:</strong></dt>
+  <dd><%= @star.avatar %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:summart) %>:</strong></dt>
+  <dd><%= @star.summart %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:favorite) %>:</strong></dt>
+  <dd><%= @star.favorite %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:score) %>:</strong></dt>
+  <dd><%= @star.score %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:intro_image) %>:</strong></dt>
+  <dd><%= @star.intro_image %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tags) %>:</strong></dt>
+  <dd>
+            <% @star.tags.each do |t| %>
+                <%= t.tagname %>,
+            <% end %>
+  </dd>
+  <dt><strong><%= model_class.human_attribute_name(:tagid) %>:</strong></dt>
+  <dd><%= @star.tagid %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:baby_id) %>:</strong></dt>
+  <dd><%= @star.baby_id %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              stars_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_star_path(@star), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              star_path(@star),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

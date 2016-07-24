@@ -1,0 +1,78 @@
+.indexPage{
+    
+}
+
+.banner{
+    position: relative;
+}
+
+.bannerButton{
+    position: absolute;
+    top: 70%;
+    left: 8%;
+}
+
+.bannerText{
+    font-style: normal;
+    font-weight: bold;
+    color: #fffc00;
+}
+
+.block{
+    background-color: #fff; 
+}
+
+.blockTitle{
+    border-left: 8px solid #ff0090;
+    color: #ff0090;
+    line-height: 2.8rem;
+    padding-left: .5em;
+    margin:.2em 0;
+}
+
+.block > div {
+    padding:0 20px;
+}
+
+
+.baby {
+    position:relative;
+    color: #fff;
+}
+
+.babyOverlay{
+    background-color: rgba(240, 89, 147, 0.8);
+    width: 100%;
+    position:absolute;
+    bottom: 0px;
+}
+
+.babyOverlay p{
+    display: inline-block;
+    line-height: 0;
+    margin: 0 8px;
+}
+.babyOverlay span{
+    float: right;
+}
+.starAvatar{
+    float:left;
+    margin:0 2px;
+    padding:0 2px;
+}
+
+.starForBaby p{
+    font-size: .8em;
+    margin-left: 68px;
+}
+
+.starForBaby p > em {
+    font-style: normal;
+    font-weight: bold;
+    color: #ff0090;
+}
+
+.newStar{
+    text-align: center;
+    color: #555;
+}
