@@ -24,10 +24,15 @@
         <td><%= link_to star.id, star_path(star) %></td>
         <td><%= star.name %></td>
         <td><%= star.avatar %></td>
+        <td>
+        <img src=<%= star.avatar %>>
+        </td>
         <td><%= star.summart %></td>
         <td><%= star.favorite %></td>
         <td><%= star.score %></td>
-        <td><%= star.intro_image %></td>
+        <td>
+            <img src=<%= star.intro_image %> style="width: 70px;height: 70px;">
+        </td>
         <td>
             <% star.tags.each do |t| %>
                 <%= t.tagname %>,

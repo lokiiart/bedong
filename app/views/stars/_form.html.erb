@@ -25,7 +25,8 @@
   <div class="form-group">
     <%= f.label :avatar, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :avatar, :class => 'form-control' %>
+        <img src=<%= @star.avatar %>>
+      <%= f.file_field :avatar, :class => 'form-control' %>
     </div>
     <%=f.error_span(:avatar) %>
   </div>
@@ -52,8 +53,9 @@
   </div>
   <div class="form-group">
     <%= f.label :intro_image, :class => 'control-label col-lg-2' %>
+      <img src=<%= @star.intro_image %> style="width: 70px;height: 70px;">
     <div class="col-lg-10">
-      <%= f.text_field :intro_image, :class => 'form-control' %>
+      <%= f.file_field :intro_image, :class => 'form-control' %>
     </div>
     <%=f.error_span(:intro_image) %>
   </div>
