@@ -1,0 +1,93 @@
+[ 2016-07-24 22:36:27.4091 10287/7fe6c4a51780 age/Wat/WatchdogMain.cpp:1291 ]: Starting Passenger watchdog...
+[ 2016-07-24 22:36:27.4129 10290/7f84ffe26780 age/Cor/CoreMain.cpp:982 ]: Starting Passenger core...
+[ 2016-07-24 22:36:27.4130 10290/7f84ffe26780 age/Cor/CoreMain.cpp:235 ]: Passenger core running in multi-application mode.
+[ 2016-07-24 22:36:27.4142 10290/7f84ffe26780 age/Cor/CoreMain.cpp:732 ]: Passenger core online, PID 10290
+[ 2016-07-24 22:36:27.4188 10295/7f12bca49780 age/Ust/UstRouterMain.cpp:529 ]: Starting Passenger UstRouter...
+[ 2016-07-24 22:36:27.4191 10295/7f12bca49780 age/Ust/UstRouterMain.cpp:342 ]: Passenger UstRouter online, PID 10295
+App 10325 stdout: 
+App 10325 stderr: config.eager_load is set to nil. Please update your config/environments/*.rb files accordingly:
+App 10325 stderr: 
+App 10325 stderr:   * development - set it to false
+App 10325 stderr:   * test - set it to false (unless you use a tool that preloads your test environment)
+App 10325 stderr:   * production - set it to true
+App 10325 stderr: 
+App 10341 stdout: 
+[ 2016-07-24 22:36:32.3327 10290/7f84fcdda700 age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /home/loki/bedong: An error occured while starting the web application.
+  Error ID: ba3d7244
+  Error details saved to: /tmp/passenger-error-y67WZb.html
+  Message from application: 'staging' database is not configured. Available: ["default", "development", "test", "production"] (ActiveRecord::AdapterNotSpecified)
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.0/lib/active_record/connection_adapters/connection_specification.rb:236:in `resolve_symbol_connection'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.0/lib/active_record/connection_adapters/connection_specification.rb:217:in `resolve_connection'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.0/lib/active_record/connection_adapters/connection_specification.rb:138:in `resolve'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.0/lib/active_record/connection_adapters/connection_specification.rb:168:in `spec'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.0/lib/active_record/connection_handling.rb:53:in `establish_connection'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.0/lib/active_record/railtie.rb:125:in `block (2 levels) in <class:Railtie>'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0/lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0/lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0/lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0/lib/active_support/lazy_load_hooks.rb:44:in `each'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0/lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.0/lib/active_record/base.rb:324:in `<module:ActiveRecord>'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.0/lib/active_record/base.rb:24:in `<top (required)>'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0/lib/active_support/dependencies.rb:293:in `require'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0/lib/active_support/dependencies.rb:293:in `block in require'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0/lib/active_support/dependencies.rb:259:in `load_dependency'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/activesupport-5.0.0/lib/active_support/dependencies.rb:293:in `require'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/passenger-5.0.29/src/ruby_supportlib/phusion_passenger/loader_shared_helpers.rb:382:in `before_handling_requests'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/passenger-5.0.29/src/helper-scripts/rack-preloader.rb:134:in `negotiate_spawn_command'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/passenger-5.0.29/src/helper-scripts/rack-preloader.rb:158:in `<module:App>'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/passenger-5.0.29/src/helper-scripts/rack-preloader.rb:30:in `<module:PhusionPassenger>'
+  /home/loki/.rvm/gems/ruby-2.3.0/gems/passenger-5.0.29/src/helper-scripts/rack-preloader.rb:29:in `<main>'
+
+
+[ 2016-07-24 22:36:32.3332 10290/7f84fdddc700 age/Cor/Con/CheckoutSession.cpp:285 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is ba3d7244. Please see earlier logs for details about the error.
+
+[ 2016-07-24 22:36:48.6989 10290/7f84fdddc700 age/Cor/CoreMain.cpp:532 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ 2016-07-24 22:36:48.6990 10290/7f84ffe26780 age/Cor/CoreMain.cpp:901 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ 2016-07-24 22:36:48.6990 10290/7f84fd5db700 Ser/Server.h:817 ]: [ApiServer] Freed 0 spare client objects
+[ 2016-07-24 22:36:48.6990 10290/7f84fd5db700 Ser/Server.h:464 ]: [ApiServer] Shutdown finished
+[ 2016-07-24 22:36:48.6991 10290/7f84fdddc700 Ser/Server.h:817 ]: [ServerThr.1] Freed 128 spare client objects
+[ 2016-07-24 22:36:48.6991 10290/7f84fdddc700 Ser/Server.h:464 ]: [ServerThr.1] Shutdown finished
+
+[ 2016-07-24 22:36:48.7032 10295/7f12bafed700 age/Ust/UstRouterMain.cpp:422 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ 2016-07-24 22:36:48.7032 10295/7f12bca49780 age/Ust/UstRouterMain.cpp:492 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ 2016-07-24 22:36:48.7033 10295/7f12ba7ec700 Ser/Server.h:817 ]: [UstRouterApiServer] Freed 0 spare client objects
+[ 2016-07-24 22:36:48.7033 10295/7f12ba7ec700 Ser/Server.h:464 ]: [UstRouterApiServer] Shutdown finished
+[ 2016-07-24 22:36:48.7034 10295/7f12bafed700 Ser/Server.h:464 ]: [UstRouter] Shutdown finished
+[ 2016-07-24 22:36:48.7035 10295/7f12bca49780 age/Ust/UstRouterMain.cpp:523 ]: Passenger UstRouter shutdown finished
+[ 2016-07-24 22:36:48.7446 10290/7f84ffe26780 age/Cor/CoreMain.cpp:967 ]: Passenger core shutdown finished
+[ 2016-07-24 22:37:08.2732 10397/7fa3f0667780 age/Wat/WatchdogMain.cpp:1291 ]: Starting Passenger watchdog...
+[ 2016-07-24 22:37:08.2768 10400/7f2fc8bcf780 age/Cor/CoreMain.cpp:982 ]: Starting Passenger core...
+[ 2016-07-24 22:37:08.2769 10400/7f2fc8bcf780 age/Cor/CoreMain.cpp:235 ]: Passenger core running in multi-application mode.
+[ 2016-07-24 22:37:08.2781 10400/7f2fc8bcf780 age/Cor/CoreMain.cpp:732 ]: Passenger core online, PID 10400
+[ 2016-07-24 22:37:08.2825 10405/7fb4079d9780 age/Ust/UstRouterMain.cpp:529 ]: Starting Passenger UstRouter...
+[ 2016-07-24 22:37:08.2828 10405/7fb4079d9780 age/Ust/UstRouterMain.cpp:342 ]: Passenger UstRouter online, PID 10405
+App 10436 stdout: 
+App 10457 stdout: 
+
+[ 2016-07-24 22:37:23.1904 10400/7f2fc6b85700 age/Cor/CoreMain.cpp:532 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ 2016-07-24 22:37:23.1904 10400/7f2fc8bcf780 age/Cor/CoreMain.cpp:901 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ 2016-07-24 22:37:23.1904 10400/7f2fc8bcf780 age/Cor/CoreMain.cpp:819 ]: Checking whether to disconnect long-running connections for process 10457, application /home/loki/bedong/public (development)
+[ 2016-07-24 22:37:23.1905 10400/7f2fc6384700 Ser/Server.h:817 ]: [ApiServer] Freed 0 spare client objects
+[ 2016-07-24 22:37:23.1905 10400/7f2fc6384700 Ser/Server.h:464 ]: [ApiServer] Shutdown finished
+[ 2016-07-24 22:37:23.1906 10400/7f2fc6b85700 Ser/Server.h:817 ]: [ServerThr.1] Freed 128 spare client objects
+[ 2016-07-24 22:37:23.1906 10400/7f2fc6b85700 Ser/Server.h:464 ]: [ServerThr.1] Shutdown finished
+[ 2016-07-24 22:37:23.1906 10400/7f2fc8bcf780 age/Cor/CoreMain.cpp:819 ]: Checking whether to disconnect long-running connections for process 10457, application /home/loki/bedong/public (development)
+
+[ 2016-07-24 22:37:23.1942 10405/7fb405f7d700 age/Ust/UstRouterMain.cpp:422 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ 2016-07-24 22:37:23.1942 10405/7fb4079d9780 age/Ust/UstRouterMain.cpp:492 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ 2016-07-24 22:37:23.1942 10405/7fb40577c700 Ser/Server.h:817 ]: [UstRouterApiServer] Freed 0 spare client objects
+[ 2016-07-24 22:37:23.1943 10405/7fb40577c700 Ser/Server.h:464 ]: [UstRouterApiServer] Shutdown finished
+[ 2016-07-24 22:37:23.1944 10405/7fb405f7d700 Ser/Server.h:464 ]: [UstRouter] Shutdown finished
+[ 2016-07-24 22:37:23.1945 10405/7fb4079d9780 age/Ust/UstRouterMain.cpp:523 ]: Passenger UstRouter shutdown finished
+[ 2016-07-24 22:37:23.4172 10400/7f2fc8bcf780 age/Cor/CoreMain.cpp:967 ]: Passenger core shutdown finished
+[ 2016-07-24 22:38:35.8072 10491/7fabe3b39780 age/Wat/WatchdogMain.cpp:1291 ]: Starting Passenger watchdog...
+[ 2016-07-24 22:38:35.8109 10494/7f25cbea6780 age/Cor/CoreMain.cpp:982 ]: Starting Passenger core...
+[ 2016-07-24 22:38:35.8110 10494/7f25cbea6780 age/Cor/CoreMain.cpp:235 ]: Passenger core running in multi-application mode.
+[ 2016-07-24 22:38:35.8122 10494/7f25cbea6780 age/Cor/CoreMain.cpp:732 ]: Passenger core online, PID 10494
+[ 2016-07-24 22:38:35.8165 10499/7fdf5b0e8780 age/Ust/UstRouterMain.cpp:529 ]: Starting Passenger UstRouter...
+[ 2016-07-24 22:38:35.8168 10499/7fdf5b0e8780 age/Ust/UstRouterMain.cpp:342 ]: Passenger UstRouter online, PID 10499
+App 10532 stdout: 
+App 10553 stdout: 
+App 10758 stdout: 
+App 10796 stdout: 
