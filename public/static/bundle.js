@@ -21126,7 +21126,7 @@ webpackJsonp([1],[
 	                                        _react2.default.createElement(
 	                                            'div',
 	                                            { className: _style2.default.baby },
-	                                            _react2.default.createElement('img', { src: b.avatar.avatar.url }),
+	                                            _react2.default.createElement('img', { src: b.avatar.url }),
 	                                            _react2.default.createElement(
 	                                                'div',
 	                                                { className: _style2.default.babyOverlay },

@@ -59,7 +59,7 @@ class Index extends Component {
                                 <Paper  zDepth={1} rounded={false} >
                                     <GridTile>
                                         <div className={style.baby}>
-                                            <img src={b.avatar.avatar.url} />
+                                            <img src={b.avatar.url} />
                                             <div className={style.babyOverlay}>
                                                 <p>清纯美少女版娃娃</p><span><p>￥{b.price}</p></span>
                                             </div>
