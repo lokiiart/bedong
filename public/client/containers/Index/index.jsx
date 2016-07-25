@@ -62,7 +62,7 @@ class Index extends Component {
                                                 <div className={style.baby}>
                                                     <img src={b.avatar.avatar.url} />
                                                     <div className={style.babyOverlay}>
-                                                        <p>清纯美少女版娃娃</p><span><p>￥{b.price}</p></span>
+                                                        <p>{b.name}</p><span><p>￥{b.price}</p></span>
                                                     </div>
                                                 </div>
                                                 <div className={style.starForBaby}>
@@ -84,7 +84,7 @@ class Index extends Component {
                                                 <div className={style.baby}>
                                                     <img src={b.avatar.avatar.url} />
                                                     <div className={style.babyOverlay}>
-                                                        <p>清纯美少女版娃娃</p><span><p>￥{b.price}</p></span>
+                                                        <p>{b.name}</p><span><p>￥{b.price}</p></span>
                                                     </div>
                                                 </div>
                                             </GridTile>

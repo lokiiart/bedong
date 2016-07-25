@@ -21134,7 +21134,7 @@ webpackJsonp([1],[
 	                                                    _react2.default.createElement(
 	                                                        'p',
 	                                                        null,
-	                                                        '清纯美少女版娃娃'
+	                                                        b.name
 	                                                    ),
 	                                                    _react2.default.createElement(
 	                                                        'span',
@@ -21190,7 +21190,7 @@ webpackJsonp([1],[
 	                                                    _react2.default.createElement(
 	                                                        'p',
 	                                                        null,
-	                                                        '清纯美少女版娃娃'
+	                                                        b.name
 	                                                    ),
 	                                                    _react2.default.createElement(
 	                                                        'span',
