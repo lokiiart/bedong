@@ -77,6 +77,7 @@ class Index extends Component {
                                 );
                                 
                             }else{
+                                return(
                                     <Link to={"/baby/"+b.id}>
                                         <Paper  zDepth={1} rounded={false} >
                                             <GridTile>
@@ -89,6 +90,7 @@ class Index extends Component {
                                             </GridTile>
                                         </Paper>
                                     </Link>
+                                    );
                                 
                             }
                         })
