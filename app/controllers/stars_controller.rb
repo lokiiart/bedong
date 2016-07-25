@@ -4,7 +4,7 @@ class StarsController < ApplicationController
   # GET /stars
   # GET /stars.json
   def index
-    @stars = Star.take(6)
+    @stars = Star.take(10)
   end
 
   # GET /stars/1
