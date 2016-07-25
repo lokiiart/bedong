@@ -18,9 +18,9 @@
   <dd><%= @star.intro_image %></dd>
   <dt><strong><%= model_class.human_attribute_name(:tags) %>:</strong></dt>
   <dd>
-            <% @star.tags.each do |t| %>
-                <%= t.tagname %>,
-            <% end %>
+        <% @star.tags.each do |t| %>
+            <%= t.tagname %>,
+        <% end %>
   </dd>
   <dt><strong><%= model_class.human_attribute_name(:tagid) %>:</strong></dt>
   <dd><%= @star.tagid %></dd>
