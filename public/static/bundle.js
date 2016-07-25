@@ -21114,61 +21114,100 @@ webpackJsonp([1],[
 	                        _GridList.GridList,
 	                        { col: 2, padding: 19, cellHeight: "auto" },
 	                        babies.map(function (b) {
-	                            return _react2.default.createElement(
-	                                _reactRouter.Link,
-	                                { to: "/baby/" + b.id },
-	                                _react2.default.createElement(
-	                                    _Paper2.default,
-	                                    { zDepth: 1, rounded: false },
+	                            if (b.star) {
+	                                return _react2.default.createElement(
+	                                    _reactRouter.Link,
+	                                    { to: "/baby/" + b.id },
 	                                    _react2.default.createElement(
-	                                        _GridList.GridTile,
-	                                        null,
+	                                        _Paper2.default,
+	                                        { zDepth: 1, rounded: false },
 	                                        _react2.default.createElement(
-	                                            'div',
-	                                            { className: _style2.default.baby },
-	                                            _react2.default.createElement('img', { src: b.avatar.url }),
+	                                            _GridList.GridTile,
+	                                            null,
 	                                            _react2.default.createElement(
 	                                                'div',
-	                                                { className: _style2.default.babyOverlay },
+	                                                { className: _style2.default.baby },
+	                                                _react2.default.createElement('img', { src: b.avatar.avatar.url }),
 	                                                _react2.default.createElement(
-	                                                    'p',
-	                                                    null,
-	                                                    '清纯美少女版娃娃'
-	                                                ),
-	                                                _react2.default.createElement(
-	                                                    'span',
-	                                                    null,
+	                                                    'div',
+	                                                    { className: _style2.default.babyOverlay },
 	                                                    _react2.default.createElement(
 	                                                        'p',
 	                                                        null,
-	                                                        '￥',
-	                                                        b.price
+	                                                        '清纯美少女版娃娃'
+	                                                    ),
+	                                                    _react2.default.createElement(
+	                                                        'span',
+	                                                        null,
+	                                                        _react2.default.createElement(
+	                                                            'p',
+	                                                            null,
+	                                                            '￥',
+	                                                            b.price
+	                                                        )
 	                                                    )
 	                                                )
-	                                            )
-	                                        ),
-	                                        _react2.default.createElement(
-	                                            'div',
-	                                            { className: _style2.default.starForBaby },
-	                                            _react2.default.createElement(
-	                                                'div',
-	                                                { className: _style2.default.starAvatar },
-	                                                _react2.default.createElement(_Avatar2.default, { src: b.star.avatar.url, size: 60 })
 	                                            ),
 	                                            _react2.default.createElement(
-	                                                'p',
-	                                                null,
+	                                                'div',
+	                                                { className: _style2.default.starForBaby },
 	                                                _react2.default.createElement(
-	                                                    'em',
-	                                                    null,
-	                                                    '服务主播：'
+	                                                    'div',
+	                                                    { className: _style2.default.starAvatar },
+	                                                    _react2.default.createElement(_Avatar2.default, { src: b.star.avatar.url, size: 60 })
 	                                                ),
-	                                                b.star.summart
+	                                                _react2.default.createElement(
+	                                                    'p',
+	                                                    null,
+	                                                    _react2.default.createElement(
+	                                                        'em',
+	                                                        null,
+	                                                        '服务主播：'
+	                                                    ),
+	                                                    b.star.summart
+	                                                )
 	                                            )
 	                                        )
 	                                    )
-	                                )
-	                            );
+	                                );
+	                            } else {
+	                                _react2.default.createElement(
+	                                    _reactRouter.Link,
+	                                    { to: "/baby/" + b.id },
+	                                    _react2.default.createElement(
+	                                        _Paper2.default,
+	                                        { zDepth: 1, rounded: false },
+	                                        _react2.default.createElement(
+	                                            _GridList.GridTile,
+	                                            null,
+	                                            _react2.default.createElement(
+	                                                'div',
+	                                                { className: _style2.default.baby },
+	                                                _react2.default.createElement('img', { src: b.avatar.avatar.url }),
+	                                                _react2.default.createElement(
+	                                                    'div',
+	                                                    { className: _style2.default.babyOverlay },
+	                                                    _react2.default.createElement(
+	                                                        'p',
+	                                                        null,
+	                                                        '清纯美少女版娃娃'
+	                                                    ),
+	                                                    _react2.default.createElement(
+	                                                        'span',
+	                                                        null,
+	                                                        _react2.default.createElement(
+	                                                            'p',
+	                                                            null,
+	                                                            '￥',
+	                                                            b.price
+	                                                        )
+	                                                    )
+	                                                )
+	                                            )
+	                                        )
+	                                    )
+	                                );
+	                            }
 	                        })
 	                    )
 	                ),

@@ -54,26 +54,43 @@ class Index extends Component {
                 <GridList col={2} padding={19} cellHeight={"auto"}>
                     {
                         babies.map(function(b){
-                         return(
-                            <Link to={"/baby/"+b.id}>
-                                <Paper  zDepth={1} rounded={false} >
-                                    <GridTile>
-                                        <div className={style.baby}>
-                                            <img src={b.avatar.url} />
-                                            <div className={style.babyOverlay}>
-                                                <p>清纯美少女版娃娃</p><span><p>￥{b.price}</p></span>
-                                            </div>
-                                        </div>
-                                        <div className={style.starForBaby}>
-                                            <div className={style.starAvatar}>
-                                                <Avatar src={b.star.avatar.url} size={60} />
-                                            </div>
-                                            <p><em>服务主播：</em>{b.star.summart}</p>
-                                        </div>
-                                    </GridTile>
-                                </Paper>
-                            </Link>
-                         );
+                            if(b.star){
+                                return(
+                                    <Link to={"/baby/"+b.id}>
+                                        <Paper  zDepth={1} rounded={false} >
+                                            <GridTile>
+                                                <div className={style.baby}>
+                                                    <img src={b.avatar.avatar.url} />
+                                                    <div className={style.babyOverlay}>
+                                                        <p>清纯美少女版娃娃</p><span><p>￥{b.price}</p></span>
+                                                    </div>
+                                                </div>
+                                                <div className={style.starForBaby}>
+                                                    <div className={style.starAvatar}>
+                                                        <Avatar src={b.star.avatar.url} size={60} />
+                                                    </div>
+                                                    <p><em>服务主播：</em>{b.star.summart}</p>
+                                                </div>
+                                            </GridTile>
+                                        </Paper>
+                                    </Link>
+                                );
+                                
+                            }else{
+                                    <Link to={"/baby/"+b.id}>
+                                        <Paper  zDepth={1} rounded={false} >
+                                            <GridTile>
+                                                <div className={style.baby}>
+                                                    <img src={b.avatar.avatar.url} />
+                                                    <div className={style.babyOverlay}>
+                                                        <p>清纯美少女版娃娃</p><span><p>￥{b.price}</p></span>
+                                                    </div>
+                                                </div>
+                                            </GridTile>
+                                        </Paper>
+                                    </Link>
+                                
+                            }
                         })
                     }
                 </GridList>
