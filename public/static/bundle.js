@@ -22857,12 +22857,13 @@ webpackJsonp([1],[
 
 
 	// module
-	exports.push([module.id, ".box___3Wb8f{\n}\n.commentTitle___3qhUd{\n    font-size: 15px;\n    line-height: 15px;\n    margin: 0;\n    font-weight: bolder;\n}\n\n.colorTitle___plgYe{\n    color: #ff0090;\n    font-style: normal;\n}", "", {"version":3,"sources":["/./components/CommentBox/style.css"],"names":[],"mappings":"AAAA;CACC;AACD;IACI,gBAAgB;IAChB,kBAAkB;IAClB,UAAU;IACV,oBAAoB;CACvB;;AAED;IACI,eAAe;IACf,mBAAmB;CACtB","file":"style.css","sourcesContent":[".box{\n}\n.commentTitle{\n    font-size: 15px;\n    line-height: 15px;\n    margin: 0;\n    font-weight: bolder;\n}\n\n.colorTitle{\n    color: #ff0090;\n    font-style: normal;\n}"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".box___3Wb8f{\n}\n.commentTitle___3qhUd{\n    font-size: 15px;\n    line-height: 15px;\n    margin: 0;\n    font-weight: bolder;\n}\n\n.blockComment___2w5Sk {\n    height: 264px;\n    overflow-y: auto;\n}\n.colorTitle___plgYe{\n    color: #ff0090;\n    font-style: normal;\n}", "", {"version":3,"sources":["/./components/CommentBox/style.css"],"names":[],"mappings":"AAAA;CACC;AACD;IACI,gBAAgB;IAChB,kBAAkB;IAClB,UAAU;IACV,oBAAoB;CACvB;;AAED;IACI,cAAc;IACd,iBAAiB;CACpB;AACD;IACI,eAAe;IACf,mBAAmB;CACtB","file":"style.css","sourcesContent":[".box{\n}\n.commentTitle{\n    font-size: 15px;\n    line-height: 15px;\n    margin: 0;\n    font-weight: bolder;\n}\n\n.blockComment {\n    height: 264px;\n    overflow-y: auto;\n}\n.colorTitle{\n    color: #ff0090;\n    font-style: normal;\n}"],"sourceRoot":"webpack://"}]);
 
 	// exports
 	exports.locals = {
 		"box": "box___3Wb8f",
 		"commentTitle": "commentTitle___3qhUd",
+		"blockComment": "blockComment___2w5Sk",
 		"colorTitle": "colorTitle___plgYe"
 	};
 

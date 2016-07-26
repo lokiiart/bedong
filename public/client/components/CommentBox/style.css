@@ -7,6 +7,10 @@
     font-weight: bolder;
 }
 
+.blockComment {
+    height: 264px;
+    overflow-y: auto;
+}
 .colorTitle{
     color: #ff0090;
     font-style: normal;
