@@ -6,10 +6,6 @@ class StarsController < ApplicationController
   def index
     @stars = Star.all
     @stars1 = Star.take(4)
-    respond_to do |format| 
-      format.html { render :show}
-      format.json {render json: @star1}
-    end
   end
 
   # GET /stars/1
