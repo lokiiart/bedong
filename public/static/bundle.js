@@ -21219,11 +21219,7 @@ webpackJsonp([1],[
 	                        { className: _style2.default.blockTitle },
 	                        '客户评论'
 	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: _style2.default.blockComment },
-	                        _react2.default.createElement(_CommentBox2.default, null)
-	                    )
+	                    _react2.default.createElement(_CommentBox2.default, null)
 	                ),
 	                _react2.default.createElement(
 	                    'div',
@@ -22397,9 +22393,13 @@ webpackJsonp([1],[
 	                );
 	            });
 	            return _react2.default.createElement(
-	                _List.List,
-	                null,
-	                commetsBlock
+	                'div',
+	                { className: _style2.default.blockComment },
+	                _react2.default.createElement(
+	                    _List.List,
+	                    null,
+	                    commetsBlock
+	                )
 	            );
 	        }
 	    }]);

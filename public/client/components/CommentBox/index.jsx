@@ -46,9 +46,11 @@ class CommentBox extends Component{
                          );
                      });
         return (
-                <List>
-                    {commetsBlock}
-                </List>
+                <div className={style.blockComment}>
+                    <List>
+                        {commetsBlock}
+                    </List>
+                </div>
 
         );
     }
