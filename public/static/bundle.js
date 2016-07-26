@@ -22399,17 +22399,7 @@ webpackJsonp([1],[
 	            return _react2.default.createElement(
 	                _List.List,
 	                null,
-	                commetsBlock,
-	                _react2.default.createElement(_List.ListItem, {
-	                    leftAvatar: _react2.default.createElement(_Avatar2.default, { src: '/img/index-baby1.jpg', size: 50 }),
-	                    primaryText: '赵先生7分钟前评价了服务主播袁姗姗',
-	                    secondaryText: _react2.default.createElement(
-	                        'p',
-	                        null,
-	                        '前几天在壁咚买的充气娃娃，产品很好用，主播袁姗姗小美女服务 也很到位。'
-	                    ),
-	                    secondaryTextLines: 2
-	                })
+	                commetsBlock
 	            );
 	        }
 	    }]);
@@ -22867,7 +22857,7 @@ webpackJsonp([1],[
 
 
 	// module
-	exports.push([module.id, ".box___3Wb8f{\n}\n.commentTitle___3qhUd{\n    font-size: 15px;\n    line-height: 15px;\n}\n\n.colorTitle___plgYe{\n    color: #ff0090;\n    font-style: normal;\n}", "", {"version":3,"sources":["/./components/CommentBox/style.css"],"names":[],"mappings":"AAAA;CACC;AACD;IACI,gBAAgB;IAChB,kBAAkB;CACrB;;AAED;IACI,eAAe;IACf,mBAAmB;CACtB","file":"style.css","sourcesContent":[".box{\n}\n.commentTitle{\n    font-size: 15px;\n    line-height: 15px;\n}\n\n.colorTitle{\n    color: #ff0090;\n    font-style: normal;\n}"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".box___3Wb8f{\n}\n.commentTitle___3qhUd{\n    font-size: 15px;\n    line-height: 15px;\n    margin: 0;\n    font-weight: bolder;\n}\n\n.colorTitle___plgYe{\n    color: #ff0090;\n    font-style: normal;\n}", "", {"version":3,"sources":["/./components/CommentBox/style.css"],"names":[],"mappings":"AAAA;CACC;AACD;IACI,gBAAgB;IAChB,kBAAkB;IAClB,UAAU;IACV,oBAAoB;CACvB;;AAED;IACI,eAAe;IACf,mBAAmB;CACtB","file":"style.css","sourcesContent":[".box{\n}\n.commentTitle{\n    font-size: 15px;\n    line-height: 15px;\n    margin: 0;\n    font-weight: bolder;\n}\n\n.colorTitle{\n    color: #ff0090;\n    font-style: normal;\n}"],"sourceRoot":"webpack://"}]);
 
 	// exports
 	exports.locals = {

@@ -3,6 +3,8 @@
 .commentTitle{
     font-size: 15px;
     line-height: 15px;
+    margin: 0;
+    font-weight: bolder;
 }
 
 .colorTitle{

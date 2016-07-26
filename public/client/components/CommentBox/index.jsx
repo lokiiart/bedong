@@ -48,17 +48,6 @@ class CommentBox extends Component{
         return (
                 <List>
                     {commetsBlock}
-                    <ListItem
-                        leftAvatar={<Avatar src="/img/index-baby1.jpg" size={50} />}
-                        primaryText="赵先生7分钟前评价了服务主播袁姗姗"
-                        secondaryText={
-                            <p>
-                                      前几天在壁咚买的充气娃娃，产品很好用，主播袁姗姗小美女服务
-                                      也很到位。
-                            </p>
-                                      }
-                        secondaryTextLines={2}
-                    />
                 </List>
 
         );
