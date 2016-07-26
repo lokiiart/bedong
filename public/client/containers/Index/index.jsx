@@ -99,7 +99,9 @@ class Index extends Component {
             </div>
             <div className={style.block}>
                 <h2 className={style.blockTitle}>客户评论</h2>
+                <div className={style.blockComment}>
                 <CommentBox />
+                </div>
             </div>
             <div className={style.block}>
                 <h2 className={style.blockTitle}>最新入驻主播</h2>

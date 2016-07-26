@@ -39,6 +39,11 @@
     background-color: #fff;
 }
 
+.blockComment {
+    height: 264px;
+    overflow-y: auto;
+}
+
 
 
 .baby {
