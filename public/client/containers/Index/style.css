@@ -64,6 +64,7 @@
 .starForBaby p{
     font-size: .8em;
     margin-left: 68px;
+    text-overflow: ellipsis;
 }
 
 .starForBaby p > em {
