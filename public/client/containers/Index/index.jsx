@@ -49,9 +49,9 @@ class Index extends Component {
             </div>
 
 
-            <div className={style.block}>
+            <div className={style.blockBaby}>
                 <h2 className={style.blockTitle}>热门推荐</h2>
-                <GridList col={2} padding={19} cellHeight={"auto"}>
+                <GridList col={2} padding={2} cellHeight={"auto"}>
                     {
                         babies.map(function(b){
                             if(b.star){

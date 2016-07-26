@@ -34,6 +34,11 @@
     padding:0 20px;
 }
 
+.blockBaby {
+    background-color: #fff;
+}
+
+
 
 .baby {
     position:relative;
@@ -59,12 +64,23 @@
     float:left;
     margin:0 2px;
     padding:0 2px;
+    height: ;
 }
 
 .starForBaby p{
-    font-size: .8em;
+    font-size: 10px;
+    line-height: 12px;
+    height: 60px;
+    position: relative;
     margin-left: 68px;
-    text-overflow: ellipsis;
+}
+
+.starForBaby p:after{
+    content: "..."; position: absolute; bottom: 0; right: 5px; padding-left: 12px;
+background: -webkit-linear-gradient(left, transparent, #fff 55%);
+background: -o-linear-gradient(right, transparent, #fff 55%);
+background: -moz-linear-gradient(right, transparent, #fff 55%);
+background: linear-gradient(to right, transparent, #fff 55%);
 }
 
 .starForBaby p > em {
