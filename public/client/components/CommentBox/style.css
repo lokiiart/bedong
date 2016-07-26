@@ -1,9 +1,11 @@
 .box{
 }
 .commentTitle{
-    
+    font-size: 15px;
+    line-height: 15px;
 }
 
 .colorTitle{
     color: #ff0090;
+    font-style: normal;
 }

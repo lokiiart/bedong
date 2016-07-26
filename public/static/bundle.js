@@ -22867,7 +22867,7 @@ webpackJsonp([1],[
 
 
 	// module
-	exports.push([module.id, ".box___3Wb8f{\n}\n.commentTitle___3qhUd{\n    \n}\n\n.colorTitle___plgYe{\n    color: #ff0090;\n}", "", {"version":3,"sources":["/./components/CommentBox/style.css"],"names":[],"mappings":"AAAA;CACC;AACD;;CAEC;;AAED;IACI,eAAe;CAClB","file":"style.css","sourcesContent":[".box{\n}\n.commentTitle{\n    \n}\n\n.colorTitle{\n    color: #ff0090;\n}"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".box___3Wb8f{\n}\n.commentTitle___3qhUd{\n    font-size: 15px;\n    line-height: 15px;\n}\n\n.colorTitle___plgYe{\n    color: #ff0090;\n    font-style: normal;\n}", "", {"version":3,"sources":["/./components/CommentBox/style.css"],"names":[],"mappings":"AAAA;CACC;AACD;IACI,gBAAgB;IAChB,kBAAkB;CACrB;;AAED;IACI,eAAe;IACf,mBAAmB;CACtB","file":"style.css","sourcesContent":[".box{\n}\n.commentTitle{\n    font-size: 15px;\n    line-height: 15px;\n}\n\n.colorTitle{\n    color: #ff0090;\n    font-style: normal;\n}"],"sourceRoot":"webpack://"}]);
 
 	// exports
 	exports.locals = {
