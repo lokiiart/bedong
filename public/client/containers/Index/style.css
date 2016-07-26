@@ -73,6 +73,7 @@
     height: 60px;
     position: relative;
     margin-left: 68px;
+    overflow: hidden;
 }
 
 .starForBaby p:after{
