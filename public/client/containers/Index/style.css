@@ -23,9 +23,10 @@
 }
 
 .blockTitle{
-    border-left: 8px solid #ff0090;
+    /* border-left: 8px solid #ff0090; */
     color: #ff0090;
-    line-height: 2.8rem;
+    font-size: 18px;
+    line-height: 24px;
     padding-left: .5em;
     margin:.2em 0;
 }

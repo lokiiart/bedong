@@ -3,6 +3,7 @@ import Avatar from 'material-ui/Avatar'
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import nanoajax from 'nanoajax';
+import style from './style.css'
 
 class CommentBox extends Component{
     constructor(props){
@@ -24,11 +25,12 @@ class CommentBox extends Component{
         var commets = this.state.commets;
         var commetsBlock = 
                     commets.map(function(c){
-                        var lAvatar = <Avatar src={c.customer_avatar.customer_avatar.url} />;
-                        var pText = c.customer_name+c.virtual_time+"分钟前评论了主播"+c.star_name;
+                        var lAvatar = <Avatar src={c.customer_avatar.customer_avatar.url} size={50} />;
+                        /* var pText = c.customer_name+c.virtual_time+"分钟前评论了主播"+c.star_name;*/
+                        var pText = <p className={style.commentTitle}><em className={style.colorTitle}>{c.customer_name}</em>{c.virtual_time}分钟前评论了<em className={style.colorTitle}>主播{c.star_name}</em></p>;
 
                          return(
-                             <div>
+                             <div className={style.box}>
                             <ListItem
                                 leftAvatar={lAvatar}
                                 primaryText={pText}
@@ -47,7 +49,7 @@ class CommentBox extends Component{
                 <List>
                     {commetsBlock}
                     <ListItem
-                        leftAvatar={<Avatar src="/img/index-baby1.jpg" />}
+                        leftAvatar={<Avatar src="/img/index-baby1.jpg" size={50} />}
                         primaryText="赵先生7分钟前评价了服务主播袁姗姗"
                         secondaryText={
                             <p>

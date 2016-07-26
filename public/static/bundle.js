@@ -36,39 +36,39 @@ webpackJsonp([1],[
 
 	var _Index2 = _interopRequireDefault(_Index);
 
-	var _Contact = __webpack_require__(628);
+	var _Contact = __webpack_require__(630);
 
 	var _Contact2 = _interopRequireDefault(_Contact);
 
-	var _Jobs = __webpack_require__(629);
+	var _Jobs = __webpack_require__(631);
 
 	var _Jobs2 = _interopRequireDefault(_Jobs);
 
-	var _About = __webpack_require__(630);
+	var _About = __webpack_require__(632);
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _Service = __webpack_require__(631);
+	var _Service = __webpack_require__(633);
 
 	var _Service2 = _interopRequireDefault(_Service);
 
-	var _GirlService = __webpack_require__(632);
+	var _GirlService = __webpack_require__(634);
 
 	var _GirlService2 = _interopRequireDefault(_GirlService);
 
-	var _Star = __webpack_require__(633);
+	var _Star = __webpack_require__(635);
 
 	var _Star2 = _interopRequireDefault(_Star);
 
-	var _Baby = __webpack_require__(636);
+	var _Baby = __webpack_require__(638);
 
 	var _Baby2 = _interopRequireDefault(_Baby);
 
-	var _Cart = __webpack_require__(643);
+	var _Cart = __webpack_require__(645);
 
 	var _Cart2 = _interopRequireDefault(_Cart);
 
-	var _store = __webpack_require__(662);
+	var _store = __webpack_require__(664);
 
 	var _store2 = _interopRequireDefault(_store);
 
@@ -21038,7 +21038,7 @@ webpackJsonp([1],[
 
 	var _nanoajax2 = _interopRequireDefault(_nanoajax);
 
-	var _style = __webpack_require__(626);
+	var _style = __webpack_require__(628);
 
 	var _style2 = _interopRequireDefault(_style);
 
@@ -22321,6 +22321,10 @@ webpackJsonp([1],[
 
 	var _nanoajax2 = _interopRequireDefault(_nanoajax);
 
+	var _style = __webpack_require__(626);
+
+	var _style2 = _interopRequireDefault(_style);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var CommentBox = function (_Component) {
@@ -22352,12 +22356,29 @@ webpackJsonp([1],[
 	        value: function render() {
 	            var commets = this.state.commets;
 	            var commetsBlock = commets.map(function (c) {
-	                var lAvatar = _react2.default.createElement(_Avatar2.default, { src: c.customer_avatar.customer_avatar.url });
-	                var pText = c.customer_name + c.virtual_time + "分钟前评论了主播" + c.star_name;
+	                var lAvatar = _react2.default.createElement(_Avatar2.default, { src: c.customer_avatar.customer_avatar.url, size: 50 });
+	                /* var pText = c.customer_name+c.virtual_time+"分钟前评论了主播"+c.star_name;*/
+	                var pText = _react2.default.createElement(
+	                    'p',
+	                    { className: _style2.default.commentTitle },
+	                    _react2.default.createElement(
+	                        'em',
+	                        { className: _style2.default.colorTitle },
+	                        c.customer_name
+	                    ),
+	                    c.virtual_time,
+	                    '分钟前评论了',
+	                    _react2.default.createElement(
+	                        'em',
+	                        { className: _style2.default.colorTitle },
+	                        '主播',
+	                        c.star_name
+	                    )
+	                );
 
 	                return _react2.default.createElement(
 	                    'div',
-	                    null,
+	                    { className: _style2.default.box },
 	                    _react2.default.createElement(_List.ListItem, {
 	                        leftAvatar: lAvatar,
 	                        primaryText: pText,
@@ -22376,7 +22397,7 @@ webpackJsonp([1],[
 	                null,
 	                commetsBlock,
 	                _react2.default.createElement(_List.ListItem, {
-	                    leftAvatar: _react2.default.createElement(_Avatar2.default, { src: '/img/index-baby1.jpg' }),
+	                    leftAvatar: _react2.default.createElement(_Avatar2.default, { src: '/img/index-baby1.jpg', size: 50 }),
 	                    primaryText: '赵先生7分钟前评价了服务主播袁姗姗',
 	                    secondaryText: _react2.default.createElement(
 	                        'p',
@@ -22842,7 +22863,51 @@ webpackJsonp([1],[
 
 
 	// module
-	exports.push([module.id, ".indexPage___2vSL1{\n    \n}\n\n.banner___1T-km{\n    position: relative;\n}\n\n.bannerButton___1urA2{\n    position: absolute;\n    top: 70%;\n    left: 8%;\n}\n\n.bannerText___1sz-g{\n    font-style: normal;\n    font-weight: bold;\n    color: #fffc00;\n}\n\n.block___1yBF5{\n    background-color: #fff; \n}\n\n.blockTitle___1uM4Y{\n    border-left: 8px solid #ff0090;\n    color: #ff0090;\n    line-height: 2.8rem;\n    padding-left: .5em;\n    margin:.2em 0;\n}\n\n.block___1yBF5 > div {\n    padding:0 20px;\n}\n\n.blockBaby___3-c0a {\n    background-color: #fff;\n}\n\n\n\n.baby___2qi0T {\n    position:relative;\n    color: #fff;\n}\n\n.babyOverlay___hIvi2{\n    background-color: rgba(240, 89, 147, 0.8);\n    width: 100%;\n    position:absolute;\n    bottom: 0px;\n}\n\n.babyOverlay___hIvi2 p{\n    display: inline-block;\n    line-height: 0;\n    margin: 0 8px;\n}\n.babyOverlay___hIvi2 span{\n    float: right;\n}\n.starAvatar___1KpSI{\n    float:left;\n    margin:0 2px;\n    padding:0 2px;\n    height: ;\n}\n\n.starForBaby___3NKfC p{\n    font-size: 10px;\n    line-height: 12px;\n    height: 60px;\n    position: relative;\n    margin-left: 68px;\n    overflow: hidden;\n}\n\n.starForBaby___3NKfC p:after{\n    content: \"...\"; position: absolute; bottom: 0; right: 5px; padding-left: 12px;\nbackground: -webkit-linear-gradient(left, transparent, #fff 55%);\nbackground: linear-gradient(to right, transparent, #fff 55%);\n}\n\n.starForBaby___3NKfC p > em {\n    font-style: normal;\n    font-weight: bold;\n    color: #ff0090;\n}\n\n.newStar___1gvXv{\n    text-align: center;\n    color: #555;\n}\n", "", {"version":3,"sources":["/./containers/Index/style.css"],"names":[],"mappings":"AAAA;;CAEC;;AAED;IACI,mBAAmB;CACtB;;AAED;IACI,mBAAmB;IACnB,SAAS;IACT,SAAS;CACZ;;AAED;IACI,mBAAmB;IACnB,kBAAkB;IAClB,eAAe;CAClB;;AAED;IACI,uBAAuB;CAC1B;;AAED;IACI,+BAA+B;IAC/B,eAAe;IACf,oBAAoB;IACpB,mBAAmB;IACnB,cAAc;CACjB;;AAED;IACI,eAAe;CAClB;;AAED;IACI,uBAAuB;CAC1B;;;;AAID;IACI,kBAAkB;IAClB,YAAY;CACf;;AAED;IACI,0CAA0C;IAC1C,YAAY;IACZ,kBAAkB;IAClB,YAAY;CACf;;AAED;IACI,sBAAsB;IACtB,eAAe;IACf,cAAc;CACjB;AACD;IACI,aAAa;CAChB;AACD;IACI,WAAW;IACX,aAAa;IACb,cAAc;IACd,SAAS;CACZ;;AAED;IACI,gBAAgB;IAChB,kBAAkB;IAClB,aAAa;IACb,mBAAmB;IACnB,kBAAkB;IAClB,iBAAiB;CACpB;;AAED;IACI,eAAe,CAAC,mBAAmB,CAAC,UAAU,CAAC,WAAW,CAAC,mBAAmB;AAClF,iEAAiE;AAGjE,6DAA6D;CAC5D;;AAED;IACI,mBAAmB;IACnB,kBAAkB;IAClB,eAAe;CAClB;;AAED;IACI,mBAAmB;IACnB,YAAY;CACf","file":"style.css","sourcesContent":[".indexPage{\n    \n}\n\n.banner{\n    position: relative;\n}\n\n.bannerButton{\n    position: absolute;\n    top: 70%;\n    left: 8%;\n}\n\n.bannerText{\n    font-style: normal;\n    font-weight: bold;\n    color: #fffc00;\n}\n\n.block{\n    background-color: #fff; \n}\n\n.blockTitle{\n    border-left: 8px solid #ff0090;\n    color: #ff0090;\n    line-height: 2.8rem;\n    padding-left: .5em;\n    margin:.2em 0;\n}\n\n.block > div {\n    padding:0 20px;\n}\n\n.blockBaby {\n    background-color: #fff;\n}\n\n\n\n.baby {\n    position:relative;\n    color: #fff;\n}\n\n.babyOverlay{\n    background-color: rgba(240, 89, 147, 0.8);\n    width: 100%;\n    position:absolute;\n    bottom: 0px;\n}\n\n.babyOverlay p{\n    display: inline-block;\n    line-height: 0;\n    margin: 0 8px;\n}\n.babyOverlay span{\n    float: right;\n}\n.starAvatar{\n    float:left;\n    margin:0 2px;\n    padding:0 2px;\n    height: ;\n}\n\n.starForBaby p{\n    font-size: 10px;\n    line-height: 12px;\n    height: 60px;\n    position: relative;\n    margin-left: 68px;\n    overflow: hidden;\n}\n\n.starForBaby p:after{\n    content: \"...\"; position: absolute; bottom: 0; right: 5px; padding-left: 12px;\nbackground: -webkit-linear-gradient(left, transparent, #fff 55%);\nbackground: -o-linear-gradient(right, transparent, #fff 55%);\nbackground: -moz-linear-gradient(right, transparent, #fff 55%);\nbackground: linear-gradient(to right, transparent, #fff 55%);\n}\n\n.starForBaby p > em {\n    font-style: normal;\n    font-weight: bold;\n    color: #ff0090;\n}\n\n.newStar{\n    text-align: center;\n    color: #555;\n}\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".box___3Wb8f{\n    height: 264px;\n    overflow-y: auto;\n}\n.commentTitle___3qhUd{\n    \n}\n\n.colorTitle___plgYe{\n    color: #ff0090;\n}", "", {"version":3,"sources":["/./components/CommentBox/style.css"],"names":[],"mappings":"AAAA;IACI,cAAc;IACd,iBAAiB;CACpB;AACD;;CAEC;;AAED;IACI,eAAe;CAClB","file":"style.css","sourcesContent":[".box{\n    height: 264px;\n    overflow-y: auto;\n}\n.commentTitle{\n    \n}\n\n.colorTitle{\n    color: #ff0090;\n}"],"sourceRoot":"webpack://"}]);
+
+	// exports
+	exports.locals = {
+		"box": "box___3Wb8f",
+		"commentTitle": "commentTitle___3qhUd",
+		"colorTitle": "colorTitle___plgYe"
+	};
+
+/***/ },
+/* 628 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(629);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(348)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]!./../../../node_modules/postcss-loader/index.js!./style.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]!./../../../node_modules/postcss-loader/index.js!./style.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 629 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(347)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".indexPage___2vSL1{\n    \n}\n\n.banner___1T-km{\n    position: relative;\n}\n\n.bannerButton___1urA2{\n    position: absolute;\n    top: 70%;\n    left: 8%;\n}\n\n.bannerText___1sz-g{\n    font-style: normal;\n    font-weight: bold;\n    color: #fffc00;\n}\n\n.block___1yBF5{\n    background-color: #fff; \n}\n\n.blockTitle___1uM4Y{\n    /* border-left: 8px solid #ff0090; */\n    color: #ff0090;\n    font-size: 18px;\n    line-height: 24px;\n    padding-left: .5em;\n    margin:.2em 0;\n}\n\n.block___1yBF5 > div {\n    padding:0 20px;\n}\n\n.blockBaby___3-c0a {\n    background-color: #fff;\n}\n\n\n\n.baby___2qi0T {\n    position:relative;\n    color: #fff;\n}\n\n.babyOverlay___hIvi2{\n    background-color: rgba(240, 89, 147, 0.8);\n    width: 100%;\n    position:absolute;\n    bottom: 0px;\n}\n\n.babyOverlay___hIvi2 p{\n    display: inline-block;\n    line-height: 0;\n    margin: 0 8px;\n}\n.babyOverlay___hIvi2 span{\n    float: right;\n}\n.starAvatar___1KpSI{\n    float:left;\n    margin:0 2px;\n    padding:0 2px;\n    height: ;\n}\n\n.starForBaby___3NKfC p{\n    font-size: 10px;\n    line-height: 12px;\n    height: 60px;\n    position: relative;\n    margin-left: 68px;\n    overflow: hidden;\n}\n\n.starForBaby___3NKfC p:after{\n    content: \"...\"; position: absolute; bottom: 0; right: 5px; padding-left: 12px;\nbackground: -webkit-linear-gradient(left, transparent, #fff 55%);\nbackground: linear-gradient(to right, transparent, #fff 55%);\n}\n\n.starForBaby___3NKfC p > em {\n    font-style: normal;\n    font-weight: bold;\n    color: #ff0090;\n}\n\n.newStar___1gvXv{\n    text-align: center;\n    color: #555;\n}\n", "", {"version":3,"sources":["/./containers/Index/style.css"],"names":[],"mappings":"AAAA;;CAEC;;AAED;IACI,mBAAmB;CACtB;;AAED;IACI,mBAAmB;IACnB,SAAS;IACT,SAAS;CACZ;;AAED;IACI,mBAAmB;IACnB,kBAAkB;IAClB,eAAe;CAClB;;AAED;IACI,uBAAuB;CAC1B;;AAED;IACI,qCAAqC;IACrC,eAAe;IACf,gBAAgB;IAChB,kBAAkB;IAClB,mBAAmB;IACnB,cAAc;CACjB;;AAED;IACI,eAAe;CAClB;;AAED;IACI,uBAAuB;CAC1B;;;;AAID;IACI,kBAAkB;IAClB,YAAY;CACf;;AAED;IACI,0CAA0C;IAC1C,YAAY;IACZ,kBAAkB;IAClB,YAAY;CACf;;AAED;IACI,sBAAsB;IACtB,eAAe;IACf,cAAc;CACjB;AACD;IACI,aAAa;CAChB;AACD;IACI,WAAW;IACX,aAAa;IACb,cAAc;IACd,SAAS;CACZ;;AAED;IACI,gBAAgB;IAChB,kBAAkB;IAClB,aAAa;IACb,mBAAmB;IACnB,kBAAkB;IAClB,iBAAiB;CACpB;;AAED;IACI,eAAe,CAAC,mBAAmB,CAAC,UAAU,CAAC,WAAW,CAAC,mBAAmB;AAClF,iEAAiE;AAGjE,6DAA6D;CAC5D;;AAED;IACI,mBAAmB;IACnB,kBAAkB;IAClB,eAAe;CAClB;;AAED;IACI,mBAAmB;IACnB,YAAY;CACf","file":"style.css","sourcesContent":[".indexPage{\n    \n}\n\n.banner{\n    position: relative;\n}\n\n.bannerButton{\n    position: absolute;\n    top: 70%;\n    left: 8%;\n}\n\n.bannerText{\n    font-style: normal;\n    font-weight: bold;\n    color: #fffc00;\n}\n\n.block{\n    background-color: #fff; \n}\n\n.blockTitle{\n    /* border-left: 8px solid #ff0090; */\n    color: #ff0090;\n    font-size: 18px;\n    line-height: 24px;\n    padding-left: .5em;\n    margin:.2em 0;\n}\n\n.block > div {\n    padding:0 20px;\n}\n\n.blockBaby {\n    background-color: #fff;\n}\n\n\n\n.baby {\n    position:relative;\n    color: #fff;\n}\n\n.babyOverlay{\n    background-color: rgba(240, 89, 147, 0.8);\n    width: 100%;\n    position:absolute;\n    bottom: 0px;\n}\n\n.babyOverlay p{\n    display: inline-block;\n    line-height: 0;\n    margin: 0 8px;\n}\n.babyOverlay span{\n    float: right;\n}\n.starAvatar{\n    float:left;\n    margin:0 2px;\n    padding:0 2px;\n    height: ;\n}\n\n.starForBaby p{\n    font-size: 10px;\n    line-height: 12px;\n    height: 60px;\n    position: relative;\n    margin-left: 68px;\n    overflow: hidden;\n}\n\n.starForBaby p:after{\n    content: \"...\"; position: absolute; bottom: 0; right: 5px; padding-left: 12px;\nbackground: -webkit-linear-gradient(left, transparent, #fff 55%);\nbackground: -o-linear-gradient(right, transparent, #fff 55%);\nbackground: -moz-linear-gradient(right, transparent, #fff 55%);\nbackground: linear-gradient(to right, transparent, #fff 55%);\n}\n\n.starForBaby p > em {\n    font-style: normal;\n    font-weight: bold;\n    color: #ff0090;\n}\n\n.newStar{\n    text-align: center;\n    color: #555;\n}\n"],"sourceRoot":"webpack://"}]);
 
 	// exports
 	exports.locals = {
@@ -22861,7 +22926,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 628 */
+/* 630 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -22925,7 +22990,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 629 */
+/* 631 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -22989,7 +23054,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 630 */
+/* 632 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -23053,7 +23118,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 631 */
+/* 633 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -23117,7 +23182,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 632 */
+/* 634 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -23181,7 +23246,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 633 */
+/* 635 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -23240,7 +23305,7 @@ webpackJsonp([1],[
 
 	var _colors = __webpack_require__(516);
 
-	var _style = __webpack_require__(634);
+	var _style = __webpack_require__(636);
 
 	var _style2 = _interopRequireDefault(_style);
 
@@ -23423,13 +23488,13 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 634 */
+/* 636 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(635);
+	var content = __webpack_require__(637);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(348)(content, {});
@@ -23449,7 +23514,7 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 635 */
+/* 637 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(347)();
@@ -23473,7 +23538,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 636 */
+/* 638 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -23508,7 +23573,7 @@ webpackJsonp([1],[
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Dialog = __webpack_require__(637);
+	var _Dialog = __webpack_require__(639);
 
 	var _Dialog2 = _interopRequireDefault(_Dialog);
 
@@ -23526,11 +23591,11 @@ webpackJsonp([1],[
 
 	var _Avatar2 = _interopRequireDefault(_Avatar);
 
-	var _Affix = __webpack_require__(641);
+	var _Affix = __webpack_require__(643);
 
 	var _Affix2 = _interopRequireDefault(_Affix);
 
-	var _Cart = __webpack_require__(643);
+	var _Cart = __webpack_require__(645);
 
 	var _Cart2 = _interopRequireDefault(_Cart);
 
@@ -23538,7 +23603,7 @@ webpackJsonp([1],[
 
 	var _CommentBox2 = _interopRequireDefault(_CommentBox);
 
-	var _style = __webpack_require__(660);
+	var _style = __webpack_require__(662);
 
 	var _style2 = _interopRequireDefault(_style);
 
@@ -23683,7 +23748,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 637 */
+/* 639 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23693,7 +23758,7 @@ webpackJsonp([1],[
 	});
 	exports.default = undefined;
 
-	var _Dialog = __webpack_require__(638);
+	var _Dialog = __webpack_require__(640);
 
 	var _Dialog2 = _interopRequireDefault(_Dialog);
 
@@ -23702,7 +23767,7 @@ webpackJsonp([1],[
 	exports.default = _Dialog2.default;
 
 /***/ },
-/* 638 */
+/* 640 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23739,7 +23804,7 @@ webpackJsonp([1],[
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _Overlay = __webpack_require__(639);
+	var _Overlay = __webpack_require__(641);
 
 	var _Overlay2 = _interopRequireDefault(_Overlay);
 
@@ -24283,7 +24348,7 @@ webpackJsonp([1],[
 	exports.default = Dialog;
 
 /***/ },
-/* 639 */
+/* 641 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24308,7 +24373,7 @@ webpackJsonp([1],[
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _AutoLockScrolling = __webpack_require__(640);
+	var _AutoLockScrolling = __webpack_require__(642);
 
 	var _AutoLockScrolling2 = _interopRequireDefault(_AutoLockScrolling);
 
@@ -24416,7 +24481,7 @@ webpackJsonp([1],[
 	exports.default = Overlay;
 
 /***/ },
-/* 640 */
+/* 642 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24523,7 +24588,7 @@ webpackJsonp([1],[
 	exports.default = AutoLockScrolling;
 
 /***/ },
-/* 641 */
+/* 643 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -24538,7 +24603,7 @@ webpackJsonp([1],[
 
 	var _extends3 = _interopRequireDefault(_extends2);
 
-	var _objectWithoutProperties2 = __webpack_require__(642);
+	var _objectWithoutProperties2 = __webpack_require__(644);
 
 	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -24640,7 +24705,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 642 */
+/* 644 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -24660,7 +24725,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 643 */
+/* 645 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -24695,7 +24760,7 @@ webpackJsonp([1],[
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _RadioButton = __webpack_require__(644);
+	var _RadioButton = __webpack_require__(646);
 
 	var _colors = __webpack_require__(516);
 
@@ -24715,15 +24780,15 @@ webpackJsonp([1],[
 
 	var _Divider2 = _interopRequireDefault(_Divider);
 
-	var _Area = __webpack_require__(650);
+	var _Area = __webpack_require__(652);
 
 	var _Area2 = _interopRequireDefault(_Area);
 
-	var _TextField = __webpack_require__(651);
+	var _TextField = __webpack_require__(653);
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 
-	var _areaData = __webpack_require__(657);
+	var _areaData = __webpack_require__(659);
 
 	var _areaData2 = _interopRequireDefault(_areaData);
 
@@ -24731,7 +24796,7 @@ webpackJsonp([1],[
 
 	var _nanoajax2 = _interopRequireDefault(_nanoajax);
 
-	var _style = __webpack_require__(658);
+	var _style = __webpack_require__(660);
 
 	var _style2 = _interopRequireDefault(_style);
 
@@ -24947,7 +25012,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 644 */
+/* 646 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24957,11 +25022,11 @@ webpackJsonp([1],[
 	});
 	exports.default = exports.RadioButtonGroup = exports.RadioButton = undefined;
 
-	var _RadioButton2 = __webpack_require__(645);
+	var _RadioButton2 = __webpack_require__(647);
 
 	var _RadioButton3 = _interopRequireDefault(_RadioButton2);
 
-	var _RadioButtonGroup2 = __webpack_require__(649);
+	var _RadioButtonGroup2 = __webpack_require__(651);
 
 	var _RadioButtonGroup3 = _interopRequireDefault(_RadioButtonGroup2);
 
@@ -24972,7 +25037,7 @@ webpackJsonp([1],[
 	exports.default = _RadioButton3.default;
 
 /***/ },
-/* 645 */
+/* 647 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24997,15 +25062,15 @@ webpackJsonp([1],[
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _EnhancedSwitch = __webpack_require__(646);
+	var _EnhancedSwitch = __webpack_require__(648);
 
 	var _EnhancedSwitch2 = _interopRequireDefault(_EnhancedSwitch);
 
-	var _radioButtonUnchecked = __webpack_require__(647);
+	var _radioButtonUnchecked = __webpack_require__(649);
 
 	var _radioButtonUnchecked2 = _interopRequireDefault(_radioButtonUnchecked);
 
-	var _radioButtonChecked = __webpack_require__(648);
+	var _radioButtonChecked = __webpack_require__(650);
 
 	var _radioButtonChecked2 = _interopRequireDefault(_radioButtonChecked);
 
@@ -25234,7 +25299,7 @@ webpackJsonp([1],[
 	exports.default = RadioButton;
 
 /***/ },
-/* 646 */
+/* 648 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25676,7 +25741,7 @@ webpackJsonp([1],[
 	exports.default = EnhancedSwitch;
 
 /***/ },
-/* 647 */
+/* 649 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25713,7 +25778,7 @@ webpackJsonp([1],[
 	exports.default = ToggleRadioButtonUnchecked;
 
 /***/ },
-/* 648 */
+/* 650 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25750,7 +25815,7 @@ webpackJsonp([1],[
 	exports.default = ToggleRadioButtonChecked;
 
 /***/ },
-/* 649 */
+/* 651 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25771,7 +25836,7 @@ webpackJsonp([1],[
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _RadioButton = __webpack_require__(644);
+	var _RadioButton = __webpack_require__(646);
 
 	var _RadioButton2 = _interopRequireDefault(_RadioButton);
 
@@ -25965,7 +26030,7 @@ webpackJsonp([1],[
 	exports.default = RadioButtonGroup;
 
 /***/ },
-/* 650 */
+/* 652 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -26105,7 +26170,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 651 */
+/* 653 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26115,7 +26180,7 @@ webpackJsonp([1],[
 	});
 	exports.default = undefined;
 
-	var _TextField = __webpack_require__(652);
+	var _TextField = __webpack_require__(654);
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 
@@ -26124,7 +26189,7 @@ webpackJsonp([1],[
 	exports.default = _TextField2.default;
 
 /***/ },
-/* 652 */
+/* 654 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26167,19 +26232,19 @@ webpackJsonp([1],[
 
 	var _deprecatedPropType2 = _interopRequireDefault(_deprecatedPropType);
 
-	var _EnhancedTextarea = __webpack_require__(653);
+	var _EnhancedTextarea = __webpack_require__(655);
 
 	var _EnhancedTextarea2 = _interopRequireDefault(_EnhancedTextarea);
 
-	var _TextFieldHint = __webpack_require__(654);
+	var _TextFieldHint = __webpack_require__(656);
 
 	var _TextFieldHint2 = _interopRequireDefault(_TextFieldHint);
 
-	var _TextFieldLabel = __webpack_require__(655);
+	var _TextFieldLabel = __webpack_require__(657);
 
 	var _TextFieldLabel2 = _interopRequireDefault(_TextFieldLabel);
 
-	var _TextFieldUnderline = __webpack_require__(656);
+	var _TextFieldUnderline = __webpack_require__(658);
 
 	var _TextFieldUnderline2 = _interopRequireDefault(_TextFieldUnderline);
 
@@ -26697,7 +26762,7 @@ webpackJsonp([1],[
 	exports.default = TextField;
 
 /***/ },
-/* 653 */
+/* 655 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26925,7 +26990,7 @@ webpackJsonp([1],[
 	exports.default = EnhancedTextarea;
 
 /***/ },
-/* 654 */
+/* 656 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27006,7 +27071,7 @@ webpackJsonp([1],[
 	exports.default = TextFieldHint;
 
 /***/ },
-/* 655 */
+/* 657 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27123,7 +27188,7 @@ webpackJsonp([1],[
 	exports.default = TextFieldLabel;
 
 /***/ },
-/* 656 */
+/* 658 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27259,7 +27324,7 @@ webpackJsonp([1],[
 	exports.default = TextFieldUnderline;
 
 /***/ },
-/* 657 */
+/* 659 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -27273,52 +27338,6 @@ webpackJsonp([1],[
 	exports.default = areaData;
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "areaData.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 658 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(659);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(348)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]!./../../../node_modules/postcss-loader/index.js!./style.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]!./../../../node_modules/postcss-loader/index.js!./style.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 659 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(347)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".area___1PZu5{\n    margin-top: .3em;\n}\n\n.wrapper___bXQ6X{\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    margin-bottom: .4em;\n}\n\n.title___2fz49{\n    padding: 5px 0;\n    padding-right: 5px;\n    border-right: 2px solid #ff0090;\n    width: 40px;\n    margin: auto;\n}\n.content___3NRQv{\n    -webkit-box-flex:1;\n        -ms-flex:1;\n            flex:1;\n    margin-left: 12px;\n}\n\n.submit___1sib4{\n    width: 80px;\n    margin: auto;\n}", "", {"version":3,"sources":["/./components/Cart/style.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;CACpB;;AAED;IACI,qBAAc;IAAd,qBAAc;IAAd,cAAc;IACd,oBAAoB;CACvB;;AAED;IACI,eAAe;IACf,mBAAmB;IACnB,gCAAgC;IAChC,YAAY;IACZ,aAAa;CAChB;AACD;IACI,mBAAO;QAAP,WAAO;YAAP,OAAO;IACP,kBAAkB;CACrB;;AAED;IACI,YAAY;IACZ,aAAa;CAChB","file":"style.css","sourcesContent":[".area{\n    margin-top: .3em;\n}\n\n.wrapper{\n    display: flex;\n    margin-bottom: .4em;\n}\n\n.title{\n    padding: 5px 0;\n    padding-right: 5px;\n    border-right: 2px solid #ff0090;\n    width: 40px;\n    margin: auto;\n}\n.content{\n    flex:1;\n    margin-left: 12px;\n}\n\n.submit{\n    width: 80px;\n    margin: auto;\n}"],"sourceRoot":"webpack://"}]);
-
-	// exports
-	exports.locals = {
-		"area": "area___1PZu5",
-		"wrapper": "wrapper___bXQ6X",
-		"title": "title___2fz49",
-		"content": "content___3NRQv",
-		"submit": "submit___1sib4"
-	};
 
 /***/ },
 /* 660 */
@@ -27355,6 +27374,52 @@ webpackJsonp([1],[
 
 
 	// module
+	exports.push([module.id, ".area___1PZu5{\n    margin-top: .3em;\n}\n\n.wrapper___bXQ6X{\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    margin-bottom: .4em;\n}\n\n.title___2fz49{\n    padding: 5px 0;\n    padding-right: 5px;\n    border-right: 2px solid #ff0090;\n    width: 40px;\n    margin: auto;\n}\n.content___3NRQv{\n    -webkit-box-flex:1;\n        -ms-flex:1;\n            flex:1;\n    margin-left: 12px;\n}\n\n.submit___1sib4{\n    width: 80px;\n    margin: auto;\n}", "", {"version":3,"sources":["/./components/Cart/style.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;CACpB;;AAED;IACI,qBAAc;IAAd,qBAAc;IAAd,cAAc;IACd,oBAAoB;CACvB;;AAED;IACI,eAAe;IACf,mBAAmB;IACnB,gCAAgC;IAChC,YAAY;IACZ,aAAa;CAChB;AACD;IACI,mBAAO;QAAP,WAAO;YAAP,OAAO;IACP,kBAAkB;CACrB;;AAED;IACI,YAAY;IACZ,aAAa;CAChB","file":"style.css","sourcesContent":[".area{\n    margin-top: .3em;\n}\n\n.wrapper{\n    display: flex;\n    margin-bottom: .4em;\n}\n\n.title{\n    padding: 5px 0;\n    padding-right: 5px;\n    border-right: 2px solid #ff0090;\n    width: 40px;\n    margin: auto;\n}\n.content{\n    flex:1;\n    margin-left: 12px;\n}\n\n.submit{\n    width: 80px;\n    margin: auto;\n}"],"sourceRoot":"webpack://"}]);
+
+	// exports
+	exports.locals = {
+		"area": "area___1PZu5",
+		"wrapper": "wrapper___bXQ6X",
+		"title": "title___2fz49",
+		"content": "content___3NRQv",
+		"submit": "submit___1sib4"
+	};
+
+/***/ },
+/* 662 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(663);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(348)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]!./../../../node_modules/postcss-loader/index.js!./style.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]!./../../../node_modules/postcss-loader/index.js!./style.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 663 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(347)();
+	// imports
+
+
+	// module
 	exports.push([module.id, ".toStar___sFSxF{\n    background-color: #FC2875;\n    color:#fff;\n    padding: 2px 8px;\n}\n\n.toStar___sFSxF a{\n    color:#FEEE35;\n}\n\n\n.toStarTitle___1u2yM{\n    position: relative;\n}\n\n.toStarTitle___1u2yM h3{\n    display: inline-block;\n    line-height: 0;\n}\n\n.toStarTitle___1u2yM span{\n    display:inline-block;\n    position: absolute;\n    right:0;\n    top: .2em;\n    font-size: .8em;\n    vertical-align: bottom;\n}\n\n\n.toStarContent___Ouy0W img{\n    float: left;\n    margin: .5em;\n}\n\n.toStarContent___Ouy0W .rightContent___3PjSH{\n    margin-left: 86px;\n}\n\n.block___2soDg{\n    \n}\n\n.blockTitle___3NvMw{\n    color: #fff;\n    background-color: #636363;\n    font-size: 1rem;\n    font-weight: bolder;\n    padding: 5px .8rem;\n    margin: 0;\n}\n\n.cartWrapper___3jR7N > div{\n    width: 100%;\n    height: 100%;\n}", "", {"version":3,"sources":["/./containers/Baby/style.css"],"names":[],"mappings":"AAAA;IACI,0BAA0B;IAC1B,WAAW;IACX,iBAAiB;CACpB;;AAED;IACI,cAAc;CACjB;;;AAGD;IACI,mBAAmB;CACtB;;AAED;IACI,sBAAsB;IACtB,eAAe;CAClB;;AAED;IACI,qBAAqB;IACrB,mBAAmB;IACnB,QAAQ;IACR,UAAU;IACV,gBAAgB;IAChB,uBAAuB;CAC1B;;;AAGD;IACI,YAAY;IACZ,aAAa;CAChB;;AAED;IACI,kBAAkB;CACrB;;AAED;;CAEC;;AAED;IACI,YAAY;IACZ,0BAA0B;IAC1B,gBAAgB;IAChB,oBAAoB;IACpB,mBAAmB;IACnB,UAAU;CACb;;AAED;IACI,YAAY;IACZ,aAAa;CAChB","file":"style.css","sourcesContent":[".toStar{\n    background-color: #FC2875;\n    color:#fff;\n    padding: 2px 8px;\n}\n\n.toStar a{\n    color:#FEEE35;\n}\n\n\n.toStarTitle{\n    position: relative;\n}\n\n.toStarTitle h3{\n    display: inline-block;\n    line-height: 0;\n}\n\n.toStarTitle span{\n    display:inline-block;\n    position: absolute;\n    right:0;\n    top: .2em;\n    font-size: .8em;\n    vertical-align: bottom;\n}\n\n\n.toStarContent img{\n    float: left;\n    margin: .5em;\n}\n\n.toStarContent .rightContent{\n    margin-left: 86px;\n}\n\n.block{\n    \n}\n\n.blockTitle{\n    color: #fff;\n    background-color: #636363;\n    font-size: 1rem;\n    font-weight: bolder;\n    padding: 5px .8rem;\n    margin: 0;\n}\n\n.cartWrapper > div{\n    width: 100%;\n    height: 100%;\n}"],"sourceRoot":"webpack://"}]);
 
 	// exports
@@ -27369,7 +27434,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 662 */
+/* 664 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -27383,9 +27448,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(103);
 
-	var _middleware = __webpack_require__(663);
+	var _middleware = __webpack_require__(665);
 
-	var _reducers = __webpack_require__(665);
+	var _reducers = __webpack_require__(667);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -27411,7 +27476,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 663 */
+/* 665 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -27423,7 +27488,7 @@ webpackJsonp([1],[
 	});
 	exports.logger = undefined;
 
-	var _logger = __webpack_require__(664);
+	var _logger = __webpack_require__(666);
 
 	var _logger2 = _interopRequireDefault(_logger);
 
@@ -27434,7 +27499,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 664 */
+/* 666 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -27457,7 +27522,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "logger.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 665 */
+/* 667 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -27472,7 +27537,7 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(103);
 
-	var _todos = __webpack_require__(666);
+	var _todos = __webpack_require__(668);
 
 	var _todos2 = _interopRequireDefault(_todos);
 
@@ -27486,7 +27551,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 666 */
+/* 668 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -27501,7 +27566,7 @@ webpackJsonp([1],[
 
 	var _extends3 = _interopRequireDefault(_extends2);
 
-	var _toConsumableArray2 = __webpack_require__(667);
+	var _toConsumableArray2 = __webpack_require__(669);
 
 	var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
@@ -27560,14 +27625,14 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/loki/Projects/ruby/b1dong/public/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "todos.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 667 */
+/* 669 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	exports.__esModule = true;
 
-	var _from = __webpack_require__(668);
+	var _from = __webpack_require__(670);
 
 	var _from2 = _interopRequireDefault(_from);
 
@@ -27586,34 +27651,34 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 668 */
+/* 670 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(669), __esModule: true };
+	module.exports = { "default": __webpack_require__(671), __esModule: true };
 
 /***/ },
-/* 669 */
+/* 671 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(290);
-	__webpack_require__(670);
+	__webpack_require__(672);
 	module.exports = __webpack_require__(268).Array.from;
 
 /***/ },
-/* 670 */
+/* 672 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var ctx            = __webpack_require__(269)
 	  , $export        = __webpack_require__(267)
 	  , toObject       = __webpack_require__(258)
-	  , call           = __webpack_require__(671)
-	  , isArrayIter    = __webpack_require__(672)
+	  , call           = __webpack_require__(673)
+	  , isArrayIter    = __webpack_require__(674)
 	  , toLength       = __webpack_require__(306)
-	  , createProperty = __webpack_require__(673)
-	  , getIterFn      = __webpack_require__(674);
+	  , createProperty = __webpack_require__(675)
+	  , getIterFn      = __webpack_require__(676);
 
-	$export($export.S + $export.F * !__webpack_require__(676)(function(iter){ Array.from(iter); }), 'Array', {
+	$export($export.S + $export.F * !__webpack_require__(678)(function(iter){ Array.from(iter); }), 'Array', {
 	  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
 	  from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
 	    var O       = toObject(arrayLike)
@@ -27643,7 +27708,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 671 */
+/* 673 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// call something on iterator step with safe closing on error
@@ -27660,7 +27725,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 672 */
+/* 674 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// check on default Array iterator
@@ -27673,7 +27738,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 673 */
+/* 675 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27686,10 +27751,10 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 674 */
+/* 676 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var classof   = __webpack_require__(675)
+	var classof   = __webpack_require__(677)
 	  , ITERATOR  = __webpack_require__(311)('iterator')
 	  , Iterators = __webpack_require__(296);
 	module.exports = __webpack_require__(268).getIteratorMethod = function(it){
@@ -27699,7 +27764,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 675 */
+/* 677 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// getting tag from 19.1.3.6 Object.prototype.toString()
@@ -27727,7 +27792,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 676 */
+/* 678 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ITERATOR     = __webpack_require__(311)('iterator')
