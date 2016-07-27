@@ -17,7 +17,12 @@ const styles={
     chip: {
         color: '#9b9b9b',
         position: 'absolute',
-        right: '0'
+        right: '0',
+        opacity: '0.8'
+    },
+    chipinline: {
+        fontSize: '12px',
+        lineHeight: '24px'
     },
     chipem: {
         color: '#ff0090',
@@ -25,8 +30,9 @@ const styles={
     },
     chip2: {
         position: 'absolute',
-        right: '8rem',
-        color: '#fff'
+        right: '7rem',
+        color: '#fff',
+        opacity: '0.8'
     }
 };
 
@@ -75,11 +81,11 @@ class Star extends Component {
             <h3>{this.state.name}</h3>
             <p>{this.state.summart}</p>
           <div className={style.likeinfo}>
-              <Chip style={styles.chip}>
+              <Chip style={styles.chip} labelStyle={styles.chipinline}>
                   服务评分 <em style={styles.chipem}>{this.state.score}</em>分
               </Chip>
-              <Chip style={styles.chip2}>
-                  <FontIcon className="material-icons" style={{color: '#ff0090',verticalAlign: 'middle'}}>favorite</FontIcon>
+              <Chip style={styles.chip2} labelStyle={styles.chipinline}>
+                  <FontIcon className="material-icons" style={{color: '#ff0090',verticalAlign: 'middle', fontSize: '20px'}}>favorite</FontIcon>
                   <span>{this.state.favorite} 人点赞</span>
               </Chip>
           </div>
@@ -96,23 +102,6 @@ class Star extends Component {
              })}
         </div>
         <img src={this.state.intro_image} />
-        <div className={style.photos}>
-            <h3>主播相册</h3>
-            <GridList cols={4} padding={10}>
-                <GridTile>
-                    <div className={style.testTile}></div>
-                </GridTile>
-                <GridTile>
-                    <div className={style.testTile}></div>
-                </GridTile>
-                <GridTile>
-                    <div className={style.testTile}></div>
-                </GridTile>
-                <GridTile>
-                    <div className={style.testTile}></div>
-                </GridTile>
-            </GridList>
-        </div>
       </div>
     );
   }

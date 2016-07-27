@@ -63,7 +63,7 @@ class Baby extends Component {
                     <Link to={"/star/"+baby.star.id}>
                     <span>
                         <h3>
-                        美女主播的服务
+                        了解美女主播的服务
                         </h3>
                     </span>
                     </Link>
@@ -81,9 +81,24 @@ class Baby extends Component {
                 </div>
             </div>
             <img src={baby.intro.intro.url} />
-            <Affix className="test" offset={390}>
-                <img src="/img/baby_03.jpg" onTouchTap={this.handleOpen} />
+            <Affix className="test" offset={390} onTouchTap={this.handleOpen}>
+                <div className={style.affixBox1}>
+                    <div className={style.price}>
+                     ￥{baby.price}元
+                    <del>￥{baby.originalPrice}元</del>
+                    </div>
+                    <div className={style.daogou}>已销售{baby.selled}件</div>
+                </div>
+                <div className={style.affixBox2}>
+                    <div className={style.affixItem1}>
+                        {baby.longname}
+                    </div>
+                    <div className={style.affixItem2}>
+                        <img src="/img/buy.png" />
+                    </div>
+                </div>
             </Affix>
+            <img src="/img/baby-intro.jpg" />
             <div className={style.block}>
                 <h2 className={style.blockTitle}>客户评论</h2>
                 <CommentBox />

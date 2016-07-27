@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {hashHistory, Link} from 'react-router'
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 import {
   pink500
@@ -32,8 +33,15 @@ class Cart extends Component{
             baby: {"id":2,"name":"清纯美少女版娃娃","avatar":{"avatar":{"url":"/uploads/baby/avatar/2/__1_03.jpg"}},"price":398,"star_id":1,"banner":{"banner":{"url":"/uploads/baby/banner/2/baby_02.jpg"}},"intro":{"intro":{"url":"/uploads/baby/intro/2/baby03.jpg"}},"created_at":"2016-07-20T07:35:42.000Z","updated_at":"2016-07-20T07:35:42.000Z","star":{"id":2,"name":"娇娇","avatar":{"url":"/uploads/star/avatar/2/__1_20.jpg"},"summart":"袁姗姗，中国内地女艺人，1987年2月22日出生于湖北省襄阳市\u003c","favorite":111,"score":9.8,"intro_image":{"url":"/uploads/star/intro_image/2/baby03.jpg"},"created_at":"2016-07-19T22:31:21.000Z","updated_at":"2016-07-20T08:30:58.000Z","tags":[{"id":18,"tagname":"111渣渣","num":null,"created_at":"2016-07-19T22:48:07.000Z","updated_at":"2016-07-19T22:48:07.000Z"},{"id":19,"tagname":"test","num":null,"created_at":"2016-07-19T22:48:30.000Z","updated_at":"2016-07-19T22:48:30.000Z"}],"tagid":null,"baby_id":2}},
         area: " ",
         door: " ",
-        address: " "
+            address: " ",
+            errorCustomer: "",
+            errorPhone: '',
+            errorAddresss: ''
         };
+    }
+
+    handleBack(){
+        hashHistory.push('/baby/'+this.state.baby.id);
     }
 
     componentWillMount(){
@@ -55,22 +63,71 @@ class Cart extends Component{
         this.setState({door:e.target.value, address:address});
     }
 
+    handleCustomer(e){
+            this.state.errorCustomer="请正确填写姓名";
+    }
+
+    handleForm(e){
+        e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+        if(form["order[payment]"].value =="货到付款"){
+            nanoajax.ajax({
+                url: '/orders',
+                method: 'POST',
+                body: formData
+            }, function(code, response){
+                let rep = JSON.parse(response);
+                if(rep.error){
+                    alert(rep.info);
+                }else{
+                    console.dir(rep);
+                }
+            });
+        }else if(form["order[payment]"].value == "支付宝"){
+            nanoajax.ajax({
+                url: '/orders',
+                method: 'POST',
+                body: formData
+            }, function(code, response){
+                try{
+                    let rep = JSON.parse(response);
+                    if(rep.error){
+                        alert(rep.info);
+                    }
+                }catch(e){
+                        form.submit();
+                }
+            });
+        }else{
+            alert("请选择合适的支付方式");
+        }
+    }
+
 
     render(){
         const baby = this.state.baby;
         return (
       <MuiThemeProvider muiTheme={muiTheme}>
             <div>
-                <div className={style.wrapper}>
-                    <div className={style.title}>
+                <div onTouchTap={this.handleBack.bind(this)}>
+                <div className={style.affixBox1}>
+                    <div className={style.price}>
+                     ￥{baby.price}元
+                    <del>￥{baby.originalPrice}元</del>
+                    </div>
+                    <div className={style.daogou}>已销售{baby.selled}件</div>
+                </div>
+                <div className={style.affixBox2}>
+                    <div className={style.affixItem2}>
                         <img src={baby.avatar.avatar.url} />
                     </div>
-                    <div className={style.content}>
-                        <h3>{baby.name}</h3>
-                        <p>￥{baby.price}.00</p>
+                    <div className={style.affixItem1}>
+                        {baby.longname}
                     </div>
                 </div>
-                <form method="POST" action="/orders">
+                </div>
+                <form method="POST" action="/orders" onSubmit={this.handleForm.bind(this)}>
                     <input type="hidden" name="order[baby]" value={baby.name} />
                     <input type="hidden" name="order[price]" value={baby.price} />
                     <input type="hidden" name="order[address]" value={this.state.address} />
@@ -102,7 +159,7 @@ class Cart extends Component{
                         <Area data={data} options={AreaOptions} onProvinceChange={this.handleArea.bind(this)} />
                         </div>
                         <TextField
-                            hintText="地址第二行请详细到楼层房号"
+                            hintText="镇、街道、小区名、门牌号"
                             onChange={this.handleDoor.bind(this)}
                             style={{width:'100%'}}
                         />

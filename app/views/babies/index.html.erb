@@ -7,8 +7,11 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
+      <th>长名字</th>
       <th><%= model_class.human_attribute_name(:avatar) %></th>
       <th><%= model_class.human_attribute_name(:price) %></th>
+      <th>原价</th>
+      <th>已售</th>
       <th><%= model_class.human_attribute_name(:star_id) %></th>
       <th><%= model_class.human_attribute_name(:banner) %></th>
       <th><%= model_class.human_attribute_name(:intro) %></th>
@@ -21,8 +24,11 @@
       <tr>
         <td><%= link_to baby.id, baby_path(baby) %></td>
         <td><%= baby.name %></td>
+        <td><%= baby.longname %></td>
         <td><%= baby.avatar %></td>
         <td><%= baby.price %></td>
+        <td><%= baby.originalPrice %></td>
+        <td><%= baby.selled %></td>
         <td><%= baby.star_id %></td>
         <td><%= baby.banner %></td>
         <td><%= baby.intro %></td>

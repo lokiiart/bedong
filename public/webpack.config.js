@@ -19,6 +19,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, './static'),
     filename: 'bundle.js',
+      publicPath: 'http://0.0.0.0:4000/'
   },
   module: {
     loaders: [
@@ -70,10 +71,12 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
     })
+
   ],
   devServer: {
     contentBase: './client',
       hot: true,
-      host: '0.0.0.0'
+      host: '0.0.0.0',
+      port: '4000'
   }
-}
+};

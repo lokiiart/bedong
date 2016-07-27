@@ -83,7 +83,7 @@
 }
 
 .starForBaby p:after{
-    content: "..."; position: absolute; bottom: 0; right: 5px; padding-left: 12px;
+    content: "..."; position: absolute; bottom: 0; right: 3px; padding-left: 12px;
 background: -webkit-linear-gradient(left, transparent, #fff 55%);
 background: -o-linear-gradient(right, transparent, #fff 55%);
 background: -moz-linear-gradient(right, transparent, #fff 55%);

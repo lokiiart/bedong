@@ -28,48 +28,62 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
 
-    if(@order.payment=="支付宝")
-      if @order.save
-        pre_order = {
-          #'service': 'create_direct_pay_by_user',
-          'service': 'alipay.wap.create.direct.pay.by.user',
-                     'partner': '2088221413889518',
-                     'seller_id': '2088221413889518',
-                     'payment_type': '1',
-                     'out_trade_no': @order.id,
-                     'subject': @order.baby,
-                     'total_fee': @order.price,
-                     'return_url': 'http://www.51upali.com',
-                     'show_url': 'http://www.51upali.com',
-                     '_input_charset': 'utf-8'
-        }.sort_by{ |key, val| key }
-        #加入回调地址
-        @alipay_order = {
-          'service': 'alipay.wap.create.direct.pay.by.user',
-                         'partner': '2088221413889518',
-                         'seller_id': '2088221413889518',
-                         'payment_type': '1',
-                         'out_trade_no': @order.id,
-                         'subject': @order.baby,
-                         'total_fee': @order.price,
-                         'return_url': 'http://www.51upali.com',
-                         'show_url': 'http://www.51upali.com',
-                         '_input_charset': 'utf-8',
-                         'sign': alipay_sign(pre_order)
-        }
-        render layout: false, template: 'home/alipay'
-      end
+
+    _error = ""
+    if(@order.customer.blank?)
+      _error =  "请正确填写姓名"
+    elsif (@order.phone.blank?)
+      _error =  "请正确填写电话号码"
+    elsif (@order.address.blank?)
+      _error =  "请正确输入收货地址"
+    elsif (@order.payment.blank?)
+      _error =  "请选择合适的支付方式"
     end
 
-    # respond_to do |format|
-    #   if @order.save
-    #     format.html { redirect_to @order, notice: 'Order was successfully created.' }
-    #     format.json { render :show, status: :created, location: @order }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @order.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    if (_error.blank?)
+      if (@order.payment=="支付宝")
+        if @order.save
+          pre_order = {
+            #'service': 'create_direct_pay_by_user',
+            'service': 'alipay.wap.create.direct.pay.by.user',
+                      'partner': '2088221413889518',
+                      'seller_id': '2088221413889518',
+                      'payment_type': '1',
+                      'out_trade_no': @order.id,
+                      'subject': @order.baby,
+                      'total_fee': @order.price,
+                      'return_url': 'http://www.51upali.com',
+                      'show_url': 'http://www.51upali.com',
+                      '_input_charset': 'utf-8'
+          }.sort_by{ |key, val| key }
+          #加入回调地址
+          @alipay_order = {
+            'service': 'alipay.wap.create.direct.pay.by.user',
+                          'partner': '2088221413889518',
+                          'seller_id': '2088221413889518',
+                          'payment_type': '1',
+                          'out_trade_no': @order.id,
+                          'subject': @order.baby,
+                          'total_fee': @order.price,
+                          'return_url': 'http://www.51upali.com',
+                          'show_url': 'http://www.51upali.com',
+                          '_input_charset': 'utf-8',
+                          'sign': alipay_sign(pre_order)
+          }
+          render layout: false, template: 'home/alipay'
+        else
+          render json: {'error': true, 'info': "购买失败"}
+        end
+      elsif (@order.payment=="货到付款")
+        if @order.save
+          render json: @order
+        else
+          render json: {'error': true, 'info': "购买失败"}
+        end
+      end
+    else
+      render json: {'error': true, 'info': _error}
+    end
   end
 
   # PATCH/PUT /orders/1

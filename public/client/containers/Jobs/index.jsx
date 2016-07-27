@@ -7,7 +7,7 @@ class Jobs extends Component {
       width: '100%'
     }
     return (
-      <img src="/img/Jobs-page.png" style={JobsStyle} />
+      <img src="/img/jobs-page.png" style={JobsStyle} />
     )
   }
 }

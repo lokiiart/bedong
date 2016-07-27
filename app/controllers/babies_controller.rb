@@ -69,6 +69,6 @@ class BabiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def baby_params
-      params.require(:baby).permit(:name, :avatar, :price, :star_id, :banner, :intro)
+      params.require(:baby).permit(:name, :avatar, :price, :star_id, :banner, :intro, :originalPrice, :selled, :longname)
     end
 end
