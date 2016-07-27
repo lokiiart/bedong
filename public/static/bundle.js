@@ -23039,7 +23039,7 @@ webpackJsonp([1],[
 	      var JobsStyle = {
 	        width: '100%'
 	      };
-	      return _react2.default.createElement('img', { src: '/img/Jobs-page.png', style: JobsStyle });
+	      return _react2.default.createElement('img', { src: '/img/jobs-page.png', style: JobsStyle });
 	    }
 	  }]);
 	  return Jobs;
@@ -23311,7 +23311,12 @@ webpackJsonp([1],[
 	    chip: {
 	        color: '#9b9b9b',
 	        position: 'absolute',
-	        right: '0'
+	        right: '0',
+	        opacity: '0.8'
+	    },
+	    chipinline: {
+	        fontSize: '12px',
+	        lineHeight: '24px'
 	    },
 	    chipem: {
 	        color: '#ff0090',
@@ -23319,8 +23324,9 @@ webpackJsonp([1],[
 	    },
 	    chip2: {
 	        position: 'absolute',
-	        right: '8rem',
-	        color: '#fff'
+	        right: '7rem',
+	        color: '#fff',
+	        opacity: '0.8'
 	    }
 	};
 
@@ -23396,7 +23402,7 @@ webpackJsonp([1],[
 	                            { className: _style2.default.likeinfo },
 	                            _react2.default.createElement(
 	                                _Chip2.default,
-	                                { style: styles.chip },
+	                                { style: styles.chip, labelStyle: styles.chipinline },
 	                                '服务评分 ',
 	                                _react2.default.createElement(
 	                                    'em',
@@ -23407,10 +23413,10 @@ webpackJsonp([1],[
 	                            ),
 	                            _react2.default.createElement(
 	                                _Chip2.default,
-	                                { style: styles.chip2 },
+	                                { style: styles.chip2, labelStyle: styles.chipinline },
 	                                _react2.default.createElement(
 	                                    _FontIcon2.default,
-	                                    { className: 'material-icons', style: { color: '#ff0090', verticalAlign: 'middle' } },
+	                                    { className: 'material-icons', style: { color: '#ff0090', verticalAlign: 'middle', fontSize: '20px' } },
 	                                    'favorite'
 	                                ),
 	                                _react2.default.createElement(
@@ -23439,40 +23445,7 @@ webpackJsonp([1],[
 	                        );
 	                    })
 	                ),
-	                _react2.default.createElement('img', { src: this.state.intro_image }),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: _style2.default.photos },
-	                    _react2.default.createElement(
-	                        'h3',
-	                        null,
-	                        '主播相册'
-	                    ),
-	                    _react2.default.createElement(
-	                        _GridList.GridList,
-	                        { cols: 4, padding: 10 },
-	                        _react2.default.createElement(
-	                            _GridList.GridTile,
-	                            null,
-	                            _react2.default.createElement('div', { className: _style2.default.testTile })
-	                        ),
-	                        _react2.default.createElement(
-	                            _GridList.GridTile,
-	                            null,
-	                            _react2.default.createElement('div', { className: _style2.default.testTile })
-	                        ),
-	                        _react2.default.createElement(
-	                            _GridList.GridTile,
-	                            null,
-	                            _react2.default.createElement('div', { className: _style2.default.testTile })
-	                        ),
-	                        _react2.default.createElement(
-	                            _GridList.GridTile,
-	                            null,
-	                            _react2.default.createElement('div', { className: _style2.default.testTile })
-	                        )
-	                    )
-	                )
+	                _react2.default.createElement('img', { src: this.state.intro_image })
 	            );
 	        }
 	    }]);
@@ -23720,8 +23693,46 @@ webpackJsonp([1],[
 	                _react2.default.createElement('img', { src: baby.intro.intro.url }),
 	                _react2.default.createElement(
 	                    _Affix2.default,
-	                    { className: 'test', offset: 390 },
-	                    _react2.default.createElement('img', { src: '/img/baby_03.jpg', onTouchTap: this.handleOpen })
+	                    { className: 'test', offset: 390, onTouchTap: this.handleOpen },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: _style2.default.affixBox1 },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: _style2.default.price },
+	                            '￥',
+	                            baby.price,
+	                            '元',
+	                            _react2.default.createElement(
+	                                'del',
+	                                null,
+	                                '￥',
+	                                baby.originalPrice,
+	                                '元'
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: _style2.default.daogou },
+	                            '已销售',
+	                            baby.selled,
+	                            '件'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: _style2.default.affixBox2 },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: _style2.default.affixItem1 },
+	                            baby.longname
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: _style2.default.affixItem2 },
+	                            _react2.default.createElement('img', { src: '/img/buy.png' })
+	                        )
+	                    )
 	                ),
 	                _react2.default.createElement('img', { src: '/img/baby-intro.jpg' }),
 	                _react2.default.createElement(
@@ -24757,6 +24768,8 @@ webpackJsonp([1],[
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(1);
+
 	var _RadioButton = __webpack_require__(646);
 
 	var _colors = __webpack_require__(516);
@@ -24823,12 +24836,20 @@ webpackJsonp([1],[
 	            baby: { "id": 2, "name": "清纯美少女版娃娃", "avatar": { "avatar": { "url": "/uploads/baby/avatar/2/__1_03.jpg" } }, "price": 398, "star_id": 1, "banner": { "banner": { "url": "/uploads/baby/banner/2/baby_02.jpg" } }, "intro": { "intro": { "url": "/uploads/baby/intro/2/baby03.jpg" } }, "created_at": "2016-07-20T07:35:42.000Z", "updated_at": "2016-07-20T07:35:42.000Z", "star": { "id": 2, "name": "娇娇", "avatar": { "url": "/uploads/star/avatar/2/__1_20.jpg" }, "summart": '袁姗姗，中国内地女艺人，1987年2月22日出生于湖北省襄阳市<', "favorite": 111, "score": 9.8, "intro_image": { "url": "/uploads/star/intro_image/2/baby03.jpg" }, "created_at": "2016-07-19T22:31:21.000Z", "updated_at": "2016-07-20T08:30:58.000Z", "tags": [{ "id": 18, "tagname": "111渣渣", "num": null, "created_at": "2016-07-19T22:48:07.000Z", "updated_at": "2016-07-19T22:48:07.000Z" }, { "id": 19, "tagname": "test", "num": null, "created_at": "2016-07-19T22:48:30.000Z", "updated_at": "2016-07-19T22:48:30.000Z" }], "tagid": null, "baby_id": 2 } },
 	            area: " ",
 	            door: " ",
-	            address: " "
+	            address: " ",
+	            errorCustomer: "",
+	            errorPhone: '',
+	            errorAddresss: ''
 	        };
 	        return _this;
 	    }
 
 	    (0, _createClass3.default)(Cart, [{
+	        key: 'handleBack',
+	        value: function handleBack() {
+	            _reactRouter.hashHistory.push('/baby/' + this.state.baby.id);
+	        }
+	    }, {
 	        key: 'componentWillMount',
 	        value: function componentWillMount() {
 	            console.log("which baby:" + this.props.params.babyId);
@@ -24851,6 +24872,49 @@ webpackJsonp([1],[
 	            this.setState({ door: e.target.value, address: address });
 	        }
 	    }, {
+	        key: 'handleCustomer',
+	        value: function handleCustomer(e) {
+	            this.state.errorCustomer = "请正确填写姓名";
+	        }
+	    }, {
+	        key: 'handleForm',
+	        value: function handleForm(e) {
+	            e.preventDefault();
+	            var form = e.target;
+	            var formData = new FormData(form);
+	            if (form["order[payment]"].value == "货到付款") {
+	                _nanoajax2.default.ajax({
+	                    url: '/orders',
+	                    method: 'POST',
+	                    body: formData
+	                }, function (code, response) {
+	                    var rep = JSON.parse(response);
+	                    if (rep.error) {
+	                        alert(rep.info);
+	                    } else {
+	                        console.dir(rep);
+	                    }
+	                });
+	            } else if (form["order[payment]"].value == "支付宝") {
+	                _nanoajax2.default.ajax({
+	                    url: '/orders',
+	                    method: 'POST',
+	                    body: formData
+	                }, function (code, response) {
+	                    try {
+	                        var rep = JSON.parse(response);
+	                        if (rep.error) {
+	                            alert(rep.info);
+	                        }
+	                    } catch (e) {
+	                        form.submit();
+	                    }
+	                });
+	            } else {
+	                alert("请选择合适的支付方式");
+	            }
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            var baby = this.state.baby;
@@ -24862,32 +24926,50 @@ webpackJsonp([1],[
 	                    null,
 	                    _react2.default.createElement(
 	                        'div',
-	                        { className: _style2.default.wrapper },
+	                        { onTouchTap: this.handleBack.bind(this) },
 	                        _react2.default.createElement(
 	                            'div',
-	                            { className: _style2.default.title },
-	                            _react2.default.createElement('img', { src: baby.avatar.avatar.url })
+	                            { className: _style2.default.affixBox1 },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: _style2.default.price },
+	                                '￥',
+	                                baby.price,
+	                                '元',
+	                                _react2.default.createElement(
+	                                    'del',
+	                                    null,
+	                                    '￥',
+	                                    baby.originalPrice,
+	                                    '元'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: _style2.default.daogou },
+	                                '已销售',
+	                                baby.selled,
+	                                '件'
+	                            )
 	                        ),
 	                        _react2.default.createElement(
 	                            'div',
-	                            { className: _style2.default.content },
+	                            { className: _style2.default.affixBox2 },
 	                            _react2.default.createElement(
-	                                'h3',
-	                                null,
-	                                baby.name
+	                                'div',
+	                                { className: _style2.default.affixItem2 },
+	                                _react2.default.createElement('img', { src: baby.avatar.avatar.url })
 	                            ),
 	                            _react2.default.createElement(
-	                                'p',
-	                                null,
-	                                '￥',
-	                                baby.price,
-	                                '.00'
+	                                'div',
+	                                { className: _style2.default.affixItem1 },
+	                                baby.longname
 	                            )
 	                        )
 	                    ),
 	                    _react2.default.createElement(
 	                        'form',
-	                        { method: 'POST', action: '/orders' },
+	                        { method: 'POST', action: '/orders', onSubmit: this.handleForm.bind(this) },
 	                        _react2.default.createElement('input', { type: 'hidden', name: 'order[baby]', value: baby.name }),
 	                        _react2.default.createElement('input', { type: 'hidden', name: 'order[price]', value: baby.price }),
 	                        _react2.default.createElement('input', { type: 'hidden', name: 'order[address]', value: this.state.address }),
@@ -24941,7 +25023,7 @@ webpackJsonp([1],[
 	                                    _react2.default.createElement(_Area2.default, { data: data, options: AreaOptions, onProvinceChange: this.handleArea.bind(this) })
 	                                ),
 	                                _react2.default.createElement(_TextField2.default, {
-	                                    hintText: '地址第二行请详细到楼层房号',
+	                                    hintText: '镇、街道、小区名、门牌号',
 	                                    onChange: this.handleDoor.bind(this),
 	                                    style: { width: '100%' }
 	                                })
@@ -27371,7 +27453,7 @@ webpackJsonp([1],[
 
 
 	// module
-	exports.push([module.id, ".area___1PZu5{\n    margin-top: .3em;\n}\n\n.wrapper___bXQ6X{\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    margin-bottom: .4em;\n}\n\n.title___2fz49{\n    padding: 5px 0;\n    padding-right: 5px;\n    border-right: 2px solid #ff0090;\n    width: 40px;\n    margin: auto;\n}\n.content___3NRQv{\n    -webkit-box-flex:1;\n        -ms-flex:1;\n            flex:1;\n    margin-left: 12px;\n}\n\n.submit___1sib4{\n    width: 80px;\n    margin: auto;\n}", "", {"version":3,"sources":["/./components/Cart/style.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;CACpB;;AAED;IACI,qBAAc;IAAd,qBAAc;IAAd,cAAc;IACd,oBAAoB;CACvB;;AAED;IACI,eAAe;IACf,mBAAmB;IACnB,gCAAgC;IAChC,YAAY;IACZ,aAAa;CAChB;AACD;IACI,mBAAO;QAAP,WAAO;YAAP,OAAO;IACP,kBAAkB;CACrB;;AAED;IACI,YAAY;IACZ,aAAa;CAChB","file":"style.css","sourcesContent":[".area{\n    margin-top: .3em;\n}\n\n.wrapper{\n    display: flex;\n    margin-bottom: .4em;\n}\n\n.title{\n    padding: 5px 0;\n    padding-right: 5px;\n    border-right: 2px solid #ff0090;\n    width: 40px;\n    margin: auto;\n}\n.content{\n    flex:1;\n    margin-left: 12px;\n}\n\n.submit{\n    width: 80px;\n    margin: auto;\n}"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".area___1PZu5{\n    margin-top: .3em;\n}\n\n.wrapper___bXQ6X{\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    margin-bottom: .4em;\n}\n\n.title___2fz49{\n    padding: 5px 0;\n    padding-right: 5px;\n    border-right: 2px solid #ff0090;\n    width: 40px;\n    margin: auto;\n}\n.content___3NRQv{\n    -webkit-box-flex:1;\n        -ms-flex:1;\n            flex:1;\n    margin-left: 12px;\n}\n\n.submit___1sib4{\n    width: 80px;\n    margin: auto;\n}\n.affixBox1___2TKQX{\n    /* display: box; */\n    /* display: -webkit-box; */\n    /* display: -moz-box; */\n    /* display: -ms-flexbox; */\n    /* display: -webkit-flex; */\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    /* -webkit-box-orient: horizontal; */\n    /* -webkit-flex-direction: row; */\n    /* -moz-flex-direction: row; */\n    /* -ms-flex-direction: row; */\n    /* -o-flex-direction: row; */\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    background-color: #fff;\n    border-bottom: 2px solid  #ff0090;\n    padding: 10px 15px;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;  \n  box-shadow:0 0 10px #0CC; \n}\n\n.price___3k2KI{\n    color: #ff0090;\n    font-weight: 500;\n    font-size: 20px!important;\n}\n\n.price___3k2KI del{\n    color: #222;\n    text-decoration: line-through!important;\n    font-size: 14px!important;\n    font-weight: 200;\n                                 \n}\n\n.daogou___12GAo{\n    \n}\n\n.affixBox2___3lWvY{\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    background-color: #fff;\n    \n}\n.affixItem1___16udg{\n    -ms-flex-negative: 1;\n        flex-shrink: 1;\n    font-weight: 300;\n    padding: 5px 15px;\n    color: #ff0090;\n}\n\n\n.affixItem2___1f-8b{\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n    padding: 5px 15px;\n}\n\n.affixItem2___1f-8b img{\n    width: 80px;\n}\n", "", {"version":3,"sources":["/./components/Cart/style.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;CACpB;;AAED;IACI,qBAAc;IAAd,qBAAc;IAAd,cAAc;IACd,oBAAoB;CACvB;;AAED;IACI,eAAe;IACf,mBAAmB;IACnB,gCAAgC;IAChC,YAAY;IACZ,aAAa;CAChB;AACD;IACI,mBAAO;QAAP,WAAO;YAAP,OAAO;IACP,kBAAkB;CACrB;;AAED;IACI,YAAY;IACZ,aAAa;CAChB;AACD;IACI,mBAAmB;IACnB,2BAA2B;IAC3B,wBAAwB;IACxB,2BAA2B;IAC3B,4BAA4B;IAC5B,qBAAc;IAAd,qBAAc;IAAd,cAAc;IACd,qCAAqC;IACrC,kCAAkC;IAClC,+BAA+B;IAC/B,8BAA8B;IAC9B,6BAA6B;IAC7B,+BAAoB;IAApB,8BAAoB;QAApB,wBAAoB;YAApB,oBAAoB;IACpB,uBAAuB;IACvB,kCAAkC;IAClC,mBAAmB;IACnB,0BAA+B;QAA/B,uBAA+B;YAA/B,+BAA+B;EAGjC,yBAAyB;CAC1B;;AAED;IACI,eAAe;IACf,iBAAiB;IACjB,0BAA0B;CAC7B;;AAED;IACI,YAAY;IACZ,wCAAwC;IACxC,0BAA0B;IAC1B,iBAAiB;;CAEpB;;AAED;;CAEC;;AAED;IACI,qBAAc;IAAd,qBAAc;IAAd,cAAc;IACd,+BAAoB;IAApB,8BAAoB;QAApB,wBAAoB;YAApB,oBAAoB;IACpB,uBAAuB;;CAE1B;AACD;IACI,qBAAe;QAAf,eAAe;IACf,iBAAiB;IACjB,kBAAkB;IAClB,eAAe;CAClB;;;AAGD;IACI,oBAAa;QAAb,qBAAa;YAAb,aAAa;IACb,kBAAkB;CACrB;;AAED;IACI,YAAY;CACf","file":"style.css","sourcesContent":[".area{\n    margin-top: .3em;\n}\n\n.wrapper{\n    display: flex;\n    margin-bottom: .4em;\n}\n\n.title{\n    padding: 5px 0;\n    padding-right: 5px;\n    border-right: 2px solid #ff0090;\n    width: 40px;\n    margin: auto;\n}\n.content{\n    flex:1;\n    margin-left: 12px;\n}\n\n.submit{\n    width: 80px;\n    margin: auto;\n}\n.affixBox1{\n    /* display: box; */\n    /* display: -webkit-box; */\n    /* display: -moz-box; */\n    /* display: -ms-flexbox; */\n    /* display: -webkit-flex; */\n    display: flex;\n    /* -webkit-box-orient: horizontal; */\n    /* -webkit-flex-direction: row; */\n    /* -moz-flex-direction: row; */\n    /* -ms-flex-direction: row; */\n    /* -o-flex-direction: row; */\n    flex-direction: row;\n    background-color: #fff;\n    border-bottom: 2px solid  #ff0090;\n    padding: 10px 15px;\n    justify-content: space-between;\n    -webkit-box-shadow:0 0 10px #0CC;  \n  -moz-box-shadow:0 0 10px #0CC;  \n  box-shadow:0 0 10px #0CC; \n}\n\n.price{\n    color: #ff0090;\n    font-weight: 500;\n    font-size: 20px!important;\n}\n\n.price del{\n    color: #222;\n    text-decoration: line-through!important;\n    font-size: 14px!important;\n    font-weight: 200;\n                                 \n}\n\n.daogou{\n    \n}\n\n.affixBox2{\n    display: flex;\n    flex-direction: row;\n    background-color: #fff;\n    \n}\n.affixItem1{\n    flex-shrink: 1;\n    font-weight: 300;\n    padding: 5px 15px;\n    color: #ff0090;\n}\n\n\n.affixItem2{\n    flex-grow: 1;\n    padding: 5px 15px;\n}\n\n.affixItem2 img{\n    width: 80px;\n}\n"],"sourceRoot":"webpack://"}]);
 
 	// exports
 	exports.locals = {
@@ -27379,7 +27461,13 @@ webpackJsonp([1],[
 		"wrapper": "wrapper___bXQ6X",
 		"title": "title___2fz49",
 		"content": "content___3NRQv",
-		"submit": "submit___1sib4"
+		"submit": "submit___1sib4",
+		"affixBox1": "affixBox1___2TKQX",
+		"price": "price___3k2KI",
+		"daogou": "daogou___12GAo",
+		"affixBox2": "affixBox2___3lWvY",
+		"affixItem1": "affixItem1___16udg",
+		"affixItem2": "affixItem2___1f-8b"
 	};
 
 /***/ },
@@ -27417,7 +27505,7 @@ webpackJsonp([1],[
 
 
 	// module
-	exports.push([module.id, ".toStar___sFSxF{\n    background-color: #FC2875;\n    color:#fff;\n    padding: 2px 8px;\n}\n\n.toStar___sFSxF a{\n    color:#FEEE35;\n}\n\n\n.toStarTitle___1u2yM{\n    position: relative;\n}\n\n.toStarTitle___1u2yM h3{\n    display: inline-block;\n    line-height: 0;\n}\n\n.toStarTitle___1u2yM span{\n    display:inline-block;\n    position: absolute;\n    right:0;\n    top: .2em;\n    font-size: .8em;\n    vertical-align: bottom;\n}\n\n\n.toStarContent___Ouy0W img{\n    float: left;\n    margin: .5em;\n}\n\n.toStarContent___Ouy0W .rightContent___3PjSH{\n    margin-left: 120px;\n}\n\n.block___2soDg{\n    \n}\n\n.blockTitle___3NvMw{\n    color: #fff;\n    background-color: #636363;\n    font-size: 1rem;\n    font-weight: bolder;\n    padding: 5px .8rem;\n    margin: 0;\n}\n\n.cartWrapper___3jR7N > div{\n    width: 100%;\n    height: 100%;\n}", "", {"version":3,"sources":["/./containers/Baby/style.css"],"names":[],"mappings":"AAAA;IACI,0BAA0B;IAC1B,WAAW;IACX,iBAAiB;CACpB;;AAED;IACI,cAAc;CACjB;;;AAGD;IACI,mBAAmB;CACtB;;AAED;IACI,sBAAsB;IACtB,eAAe;CAClB;;AAED;IACI,qBAAqB;IACrB,mBAAmB;IACnB,QAAQ;IACR,UAAU;IACV,gBAAgB;IAChB,uBAAuB;CAC1B;;;AAGD;IACI,YAAY;IACZ,aAAa;CAChB;;AAED;IACI,mBAAmB;CACtB;;AAED;;CAEC;;AAED;IACI,YAAY;IACZ,0BAA0B;IAC1B,gBAAgB;IAChB,oBAAoB;IACpB,mBAAmB;IACnB,UAAU;CACb;;AAED;IACI,YAAY;IACZ,aAAa;CAChB","file":"style.css","sourcesContent":[".toStar{\n    background-color: #FC2875;\n    color:#fff;\n    padding: 2px 8px;\n}\n\n.toStar a{\n    color:#FEEE35;\n}\n\n\n.toStarTitle{\n    position: relative;\n}\n\n.toStarTitle h3{\n    display: inline-block;\n    line-height: 0;\n}\n\n.toStarTitle span{\n    display:inline-block;\n    position: absolute;\n    right:0;\n    top: .2em;\n    font-size: .8em;\n    vertical-align: bottom;\n}\n\n\n.toStarContent img{\n    float: left;\n    margin: .5em;\n}\n\n.toStarContent .rightContent{\n    margin-left: 120px;\n}\n\n.block{\n    \n}\n\n.blockTitle{\n    color: #fff;\n    background-color: #636363;\n    font-size: 1rem;\n    font-weight: bolder;\n    padding: 5px .8rem;\n    margin: 0;\n}\n\n.cartWrapper > div{\n    width: 100%;\n    height: 100%;\n}"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".toStar___sFSxF{\n    background-color: #FC2875;\n    color:#fff;\n    padding: 2px 8px;\n}\n\n.toStar___sFSxF a{\n    color:#FEEE35;\n}\n\n\n.toStarTitle___1u2yM{\n    position: relative;\n}\n\n.toStarTitle___1u2yM h3{\n    display: inline-block;\n    line-height: 0;\n}\n\n.toStarTitle___1u2yM span{\n    display:inline-block;\n    position: absolute;\n    right:0;\n    top: .2em;\n    font-size: .8em;\n    vertical-align: bottom;\n}\n\n\n.toStarContent___Ouy0W img{\n    float: left;\n    margin: .5em;\n}\n\n.toStarContent___Ouy0W .rightContent___3PjSH{\n    margin-left: 120px;\n}\n\n.block___2soDg{\n    \n}\n\n.blockTitle___3NvMw{\n    color: #fff;\n    background-color: #636363;\n    font-size: 1rem;\n    font-weight: bolder;\n    padding: 5px .8rem;\n    margin: 0;\n}\n\n.cartWrapper___3jR7N > div{\n    width: 100%;\n    height: 100%;\n}\n\n\n.affixBox1___1yseq{\n    /* display: box; */\n    /* display: -webkit-box; */\n    /* display: -moz-box; */\n    /* display: -ms-flexbox; */\n    /* display: -webkit-flex; */\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    /* -webkit-box-orient: horizontal; */\n    /* -webkit-flex-direction: row; */\n    /* -moz-flex-direction: row; */\n    /* -ms-flex-direction: row; */\n    /* -o-flex-direction: row; */\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    background-color: #fff;\n    border-bottom: 2px solid  #ff0090;\n    padding: 10px 15px;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;  \n  box-shadow:0 0 10px #0CC; \n}\n\n.price___DVwpv{\n    color: #ff0090;\n    font-weight: 500;\n    font-size: 20px!important;\n}\n\n.price___DVwpv del{\n    color: #222;\n    text-decoration: line-through!important;\n    font-size: 14px!important;\n    font-weight: 200;\n                                 \n}\n\n.daogou___1vXkD{\n    \n}\n\n.affixBox2___2e_M4{\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    background-color: #fff;\n    \n}\n.affixItem1___3cHq3{\n    -ms-flex-negative: 1;\n        flex-shrink: 1;\n    font-weight: 300;\n    padding: 5px 15px;\n    color: #ff0090;\n}\n\n\n.affixItem2___3FmJB{\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n    padding: 5px 15px;\n}\n\n", "", {"version":3,"sources":["/./containers/Baby/style.css"],"names":[],"mappings":"AAAA;IACI,0BAA0B;IAC1B,WAAW;IACX,iBAAiB;CACpB;;AAED;IACI,cAAc;CACjB;;;AAGD;IACI,mBAAmB;CACtB;;AAED;IACI,sBAAsB;IACtB,eAAe;CAClB;;AAED;IACI,qBAAqB;IACrB,mBAAmB;IACnB,QAAQ;IACR,UAAU;IACV,gBAAgB;IAChB,uBAAuB;CAC1B;;;AAGD;IACI,YAAY;IACZ,aAAa;CAChB;;AAED;IACI,mBAAmB;CACtB;;AAED;;CAEC;;AAED;IACI,YAAY;IACZ,0BAA0B;IAC1B,gBAAgB;IAChB,oBAAoB;IACpB,mBAAmB;IACnB,UAAU;CACb;;AAED;IACI,YAAY;IACZ,aAAa;CAChB;;;AAGD;IACI,mBAAmB;IACnB,2BAA2B;IAC3B,wBAAwB;IACxB,2BAA2B;IAC3B,4BAA4B;IAC5B,qBAAc;IAAd,qBAAc;IAAd,cAAc;IACd,qCAAqC;IACrC,kCAAkC;IAClC,+BAA+B;IAC/B,8BAA8B;IAC9B,6BAA6B;IAC7B,+BAAoB;IAApB,8BAAoB;QAApB,wBAAoB;YAApB,oBAAoB;IACpB,uBAAuB;IACvB,kCAAkC;IAClC,mBAAmB;IACnB,0BAA+B;QAA/B,uBAA+B;YAA/B,+BAA+B;EAGjC,yBAAyB;CAC1B;;AAED;IACI,eAAe;IACf,iBAAiB;IACjB,0BAA0B;CAC7B;;AAED;IACI,YAAY;IACZ,wCAAwC;IACxC,0BAA0B;IAC1B,iBAAiB;;CAEpB;;AAED;;CAEC;;AAED;IACI,qBAAc;IAAd,qBAAc;IAAd,cAAc;IACd,+BAAoB;IAApB,8BAAoB;QAApB,wBAAoB;YAApB,oBAAoB;IACpB,uBAAuB;;CAE1B;AACD;IACI,qBAAe;QAAf,eAAe;IACf,iBAAiB;IACjB,kBAAkB;IAClB,eAAe;CAClB;;;AAGD;IACI,oBAAa;QAAb,qBAAa;YAAb,aAAa;IACb,kBAAkB;CACrB","file":"style.css","sourcesContent":[".toStar{\n    background-color: #FC2875;\n    color:#fff;\n    padding: 2px 8px;\n}\n\n.toStar a{\n    color:#FEEE35;\n}\n\n\n.toStarTitle{\n    position: relative;\n}\n\n.toStarTitle h3{\n    display: inline-block;\n    line-height: 0;\n}\n\n.toStarTitle span{\n    display:inline-block;\n    position: absolute;\n    right:0;\n    top: .2em;\n    font-size: .8em;\n    vertical-align: bottom;\n}\n\n\n.toStarContent img{\n    float: left;\n    margin: .5em;\n}\n\n.toStarContent .rightContent{\n    margin-left: 120px;\n}\n\n.block{\n    \n}\n\n.blockTitle{\n    color: #fff;\n    background-color: #636363;\n    font-size: 1rem;\n    font-weight: bolder;\n    padding: 5px .8rem;\n    margin: 0;\n}\n\n.cartWrapper > div{\n    width: 100%;\n    height: 100%;\n}\n\n\n.affixBox1{\n    /* display: box; */\n    /* display: -webkit-box; */\n    /* display: -moz-box; */\n    /* display: -ms-flexbox; */\n    /* display: -webkit-flex; */\n    display: flex;\n    /* -webkit-box-orient: horizontal; */\n    /* -webkit-flex-direction: row; */\n    /* -moz-flex-direction: row; */\n    /* -ms-flex-direction: row; */\n    /* -o-flex-direction: row; */\n    flex-direction: row;\n    background-color: #fff;\n    border-bottom: 2px solid  #ff0090;\n    padding: 10px 15px;\n    justify-content: space-between;\n    -webkit-box-shadow:0 0 10px #0CC;  \n  -moz-box-shadow:0 0 10px #0CC;  \n  box-shadow:0 0 10px #0CC; \n}\n\n.price{\n    color: #ff0090;\n    font-weight: 500;\n    font-size: 20px!important;\n}\n\n.price del{\n    color: #222;\n    text-decoration: line-through!important;\n    font-size: 14px!important;\n    font-weight: 200;\n                                 \n}\n\n.daogou{\n    \n}\n\n.affixBox2{\n    display: flex;\n    flex-direction: row;\n    background-color: #fff;\n    \n}\n.affixItem1{\n    flex-shrink: 1;\n    font-weight: 300;\n    padding: 5px 15px;\n    color: #ff0090;\n}\n\n\n.affixItem2{\n    flex-grow: 1;\n    padding: 5px 15px;\n}\n\n"],"sourceRoot":"webpack://"}]);
 
 	// exports
 	exports.locals = {
@@ -27427,7 +27515,13 @@ webpackJsonp([1],[
 		"rightContent": "rightContent___3PjSH",
 		"block": "block___2soDg",
 		"blockTitle": "blockTitle___3NvMw",
-		"cartWrapper": "cartWrapper___3jR7N"
+		"cartWrapper": "cartWrapper___3jR7N",
+		"affixBox1": "affixBox1___1yseq",
+		"price": "price___DVwpv",
+		"daogou": "daogou___1vXkD",
+		"affixBox2": "affixBox2___2e_M4",
+		"affixItem1": "affixItem1___3cHq3",
+		"affixItem2": "affixItem2___3FmJB"
 	};
 
 /***/ },
