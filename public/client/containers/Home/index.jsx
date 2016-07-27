@@ -29,6 +29,9 @@ class Home extends Component {
           <Top />
           {children}
           <Bottom />
+          <a href="http://pgt.zoosnet.net/LR/Chatpre.aspx?id=PGT57696928&lng=cn">
+          <img className={style.customerService} src="/img/1.png" />
+          </a>
         </div>
       </MuiThemeProvider>
 

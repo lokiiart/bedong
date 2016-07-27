@@ -38,6 +38,13 @@ img{
   width: 100%;
 }
 
+.customerService{
+    width: 70px;
+    position: fixed;
+    bottom: 150px;
+    right: 0;
+}
+
 :global .clearfix{overflow:auto;_height:1%}
 
 :global .affix{position:fixed;z-index:999;bottom:0;
