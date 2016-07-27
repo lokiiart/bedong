@@ -52,8 +52,8 @@ class OrdersController < ApplicationController
                       'out_trade_no': @order.id,
                       'subject': @order.baby,
                       'total_fee': @order.price,
-                      'return_url': 'http://www.51upali.com',
-                      'show_url': 'http://www.51upali.com',
+                      'return_url': 'http://m.51upali.com',
+                      'show_url': 'http://m.51upali.com',
                       '_input_charset': 'utf-8'
           }.sort_by{ |key, val| key }
           #加入回调地址
@@ -65,8 +65,8 @@ class OrdersController < ApplicationController
                           'out_trade_no': @order.id,
                           'subject': @order.baby,
                           'total_fee': @order.price,
-                          'return_url': 'http://www.51upali.com',
-                          'show_url': 'http://www.51upali.com',
+                          'return_url': 'http://m.51upali.com',
+                          'show_url': 'http://m.51upali.com',
                           '_input_charset': 'utf-8',
                           'sign': alipay_sign(pre_order)
           }
