@@ -19,7 +19,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, './static'),
     filename: 'bundle.js',
-      publicPath: 'http://0.0.0.0:4000/'
+      publicPath: 'http://192.168.1.102:4000/'
   },
   module: {
     loaders: [

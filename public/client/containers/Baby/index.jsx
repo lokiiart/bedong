@@ -70,7 +70,7 @@ class Baby extends Component {
                 </div>
                 <div className={style.toStarContent}>
                     <Link to={"/star/"+baby.star.id}>
-                    <Avatar size={80} src={baby.star.avatar.url} />
+                    <Avatar size={90} src={baby.star.avatar.url} />
                     </Link>
                     <div className={style.rightContent}>
                         <p>{baby.star.name}</p>

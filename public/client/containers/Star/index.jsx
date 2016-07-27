@@ -75,7 +75,7 @@ class Star extends Component {
       <div className={style.star}>
         <div className={classnames('clearfix', style.summary)}>
           <div className={style.avatar}>
-              <Avatar src={this.state.avatar} size={70} />
+              <Avatar src={this.state.avatar} size={100} />
           </div>
           <div className={style.info}>
             <h3>{this.state.name}</h3>

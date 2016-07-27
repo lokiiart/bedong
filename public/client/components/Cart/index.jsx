@@ -36,8 +36,13 @@ class Cart extends Component{
             address: " ",
             errorCustomer: "",
             errorPhone: '',
-            errorAddresss: ''
+            errorAddresss: '',
+            payment: '支付宝'
         };
+    }
+
+    handlePayment(e,v){
+        this.setState({payment: v});
     }
 
     handleBack(){
@@ -69,9 +74,9 @@ class Cart extends Component{
 
     handleForm(e){
         e.preventDefault();
-            const form = e.target;
-            const formData = new FormData(form);
-        if(form["order[payment]"].value =="货到付款"){
+        const form = e.target;
+        const formData = new FormData(form);
+        if(this.state.payment =="货到付款"){
             nanoajax.ajax({
                 url: '/orders',
                 method: 'POST',
@@ -81,10 +86,12 @@ class Cart extends Component{
                 if(rep.error){
                     alert(rep.info);
                 }else{
-                    console.dir(rep);
+                    if(rep.updated_at){
+                        alert("订购成功");
+                    }
                 }
             });
-        }else if(form["order[payment]"].value == "支付宝"){
+        }else if(this.state.payment == "支付宝"){
             nanoajax.ajax({
                 url: '/orders',
                 method: 'POST',
@@ -170,7 +177,7 @@ class Cart extends Component{
                     <legend>支付方式</legend>
                     </div>
                     <div className={style.content}>
-                        <RadioButtonGroup name="order[payment]" defaultSelected="支付宝">
+                        <RadioButtonGroup name="order[payment]" defaultSelected="支付宝" onChange={this.handlePayment.bind(this)}>
                             <RadioButton
                                 value="支付宝"
                                 label="支付宝"

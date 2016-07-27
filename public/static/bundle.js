@@ -23382,7 +23382,7 @@ webpackJsonp([1],[
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: _style2.default.avatar },
-	                        _react2.default.createElement(_Avatar2.default, { src: this.state.avatar, size: 70 })
+	                        _react2.default.createElement(_Avatar2.default, { src: this.state.avatar, size: 100 })
 	                    ),
 	                    _react2.default.createElement(
 	                        'div',
@@ -23667,7 +23667,7 @@ webpackJsonp([1],[
 	                        _react2.default.createElement(
 	                            _reactRouter.Link,
 	                            { to: "/star/" + baby.star.id },
-	                            _react2.default.createElement(_Avatar2.default, { size: 80, src: baby.star.avatar.url })
+	                            _react2.default.createElement(_Avatar2.default, { size: 90, src: baby.star.avatar.url })
 	                        ),
 	                        _react2.default.createElement(
 	                            'div',
@@ -24839,12 +24839,18 @@ webpackJsonp([1],[
 	            address: " ",
 	            errorCustomer: "",
 	            errorPhone: '',
-	            errorAddresss: ''
+	            errorAddresss: '',
+	            payment: '支付宝'
 	        };
 	        return _this;
 	    }
 
 	    (0, _createClass3.default)(Cart, [{
+	        key: 'handlePayment',
+	        value: function handlePayment(e, v) {
+	            this.setState({ payment: v });
+	        }
+	    }, {
 	        key: 'handleBack',
 	        value: function handleBack() {
 	            _reactRouter.hashHistory.push('/baby/' + this.state.baby.id);
@@ -24882,7 +24888,7 @@ webpackJsonp([1],[
 	            e.preventDefault();
 	            var form = e.target;
 	            var formData = new FormData(form);
-	            if (form["order[payment]"].value == "货到付款") {
+	            if (this.state.payment == "货到付款") {
 	                _nanoajax2.default.ajax({
 	                    url: '/orders',
 	                    method: 'POST',
@@ -24892,10 +24898,12 @@ webpackJsonp([1],[
 	                    if (rep.error) {
 	                        alert(rep.info);
 	                    } else {
-	                        console.dir(rep);
+	                        if (rep.updated_at) {
+	                            alert("订购成功");
+	                        }
 	                    }
 	                });
-	            } else if (form["order[payment]"].value == "支付宝") {
+	            } else if (this.state.payment == "支付宝") {
 	                _nanoajax2.default.ajax({
 	                    url: '/orders',
 	                    method: 'POST',
@@ -25046,7 +25054,7 @@ webpackJsonp([1],[
 	                                { className: _style2.default.content },
 	                                _react2.default.createElement(
 	                                    _RadioButton.RadioButtonGroup,
-	                                    { name: 'order[payment]', defaultSelected: '支付宝' },
+	                                    { name: 'order[payment]', defaultSelected: '支付宝', onChange: this.handlePayment.bind(this) },
 	                                    _react2.default.createElement(_RadioButton.RadioButton, {
 	                                        value: '支付宝',
 	                                        label: '支付宝'
@@ -27505,7 +27513,7 @@ webpackJsonp([1],[
 
 
 	// module
-	exports.push([module.id, ".toStar___sFSxF{\n    background-color: #FC2875;\n    color:#fff;\n    padding: 2px 8px;\n}\n\n.toStar___sFSxF a{\n    color:#FEEE35;\n}\n\n\n.toStarTitle___1u2yM{\n    position: relative;\n}\n\n.toStarTitle___1u2yM h3{\n    display: inline-block;\n    line-height: 0;\n}\n\n.toStarTitle___1u2yM span{\n    display:inline-block;\n    position: absolute;\n    right:0;\n    top: .2em;\n    font-size: .8em;\n    vertical-align: bottom;\n}\n\n\n.toStarContent___Ouy0W img{\n    float: left;\n    margin: .5em;\n}\n\n.toStarContent___Ouy0W .rightContent___3PjSH{\n    margin-left: 120px;\n}\n\n.block___2soDg{\n    \n}\n\n.blockTitle___3NvMw{\n    color: #fff;\n    background-color: #636363;\n    font-size: 1rem;\n    font-weight: bolder;\n    padding: 5px .8rem;\n    margin: 0;\n}\n\n.cartWrapper___3jR7N > div{\n    width: 100%;\n    height: 100%;\n}\n\n\n.affixBox1___1yseq{\n    /* display: box; */\n    /* display: -webkit-box; */\n    /* display: -moz-box; */\n    /* display: -ms-flexbox; */\n    /* display: -webkit-flex; */\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    /* -webkit-box-orient: horizontal; */\n    /* -webkit-flex-direction: row; */\n    /* -moz-flex-direction: row; */\n    /* -ms-flex-direction: row; */\n    /* -o-flex-direction: row; */\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    background-color: #fff;\n    border-bottom: 2px solid  #ff0090;\n    padding: 10px 15px;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;  \n  box-shadow:0 0 10px #0CC; \n}\n\n.price___DVwpv{\n    color: #ff0090;\n    font-weight: 500;\n    font-size: 20px!important;\n}\n\n.price___DVwpv del{\n    color: #222;\n    text-decoration: line-through!important;\n    font-size: 14px!important;\n    font-weight: 200;\n                                 \n}\n\n.daogou___1vXkD{\n    \n}\n\n.affixBox2___2e_M4{\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    background-color: #fff;\n    \n}\n.affixItem1___3cHq3{\n    -ms-flex-negative: 1;\n        flex-shrink: 1;\n    font-weight: 300;\n    padding: 5px 15px;\n    color: #ff0090;\n}\n\n\n.affixItem2___3FmJB{\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n    padding: 5px 15px;\n}\n\n", "", {"version":3,"sources":["/./containers/Baby/style.css"],"names":[],"mappings":"AAAA;IACI,0BAA0B;IAC1B,WAAW;IACX,iBAAiB;CACpB;;AAED;IACI,cAAc;CACjB;;;AAGD;IACI,mBAAmB;CACtB;;AAED;IACI,sBAAsB;IACtB,eAAe;CAClB;;AAED;IACI,qBAAqB;IACrB,mBAAmB;IACnB,QAAQ;IACR,UAAU;IACV,gBAAgB;IAChB,uBAAuB;CAC1B;;;AAGD;IACI,YAAY;IACZ,aAAa;CAChB;;AAED;IACI,mBAAmB;CACtB;;AAED;;CAEC;;AAED;IACI,YAAY;IACZ,0BAA0B;IAC1B,gBAAgB;IAChB,oBAAoB;IACpB,mBAAmB;IACnB,UAAU;CACb;;AAED;IACI,YAAY;IACZ,aAAa;CAChB;;;AAGD;IACI,mBAAmB;IACnB,2BAA2B;IAC3B,wBAAwB;IACxB,2BAA2B;IAC3B,4BAA4B;IAC5B,qBAAc;IAAd,qBAAc;IAAd,cAAc;IACd,qCAAqC;IACrC,kCAAkC;IAClC,+BAA+B;IAC/B,8BAA8B;IAC9B,6BAA6B;IAC7B,+BAAoB;IAApB,8BAAoB;QAApB,wBAAoB;YAApB,oBAAoB;IACpB,uBAAuB;IACvB,kCAAkC;IAClC,mBAAmB;IACnB,0BAA+B;QAA/B,uBAA+B;YAA/B,+BAA+B;EAGjC,yBAAyB;CAC1B;;AAED;IACI,eAAe;IACf,iBAAiB;IACjB,0BAA0B;CAC7B;;AAED;IACI,YAAY;IACZ,wCAAwC;IACxC,0BAA0B;IAC1B,iBAAiB;;CAEpB;;AAED;;CAEC;;AAED;IACI,qBAAc;IAAd,qBAAc;IAAd,cAAc;IACd,+BAAoB;IAApB,8BAAoB;QAApB,wBAAoB;YAApB,oBAAoB;IACpB,uBAAuB;;CAE1B;AACD;IACI,qBAAe;QAAf,eAAe;IACf,iBAAiB;IACjB,kBAAkB;IAClB,eAAe;CAClB;;;AAGD;IACI,oBAAa;QAAb,qBAAa;YAAb,aAAa;IACb,kBAAkB;CACrB","file":"style.css","sourcesContent":[".toStar{\n    background-color: #FC2875;\n    color:#fff;\n    padding: 2px 8px;\n}\n\n.toStar a{\n    color:#FEEE35;\n}\n\n\n.toStarTitle{\n    position: relative;\n}\n\n.toStarTitle h3{\n    display: inline-block;\n    line-height: 0;\n}\n\n.toStarTitle span{\n    display:inline-block;\n    position: absolute;\n    right:0;\n    top: .2em;\n    font-size: .8em;\n    vertical-align: bottom;\n}\n\n\n.toStarContent img{\n    float: left;\n    margin: .5em;\n}\n\n.toStarContent .rightContent{\n    margin-left: 120px;\n}\n\n.block{\n    \n}\n\n.blockTitle{\n    color: #fff;\n    background-color: #636363;\n    font-size: 1rem;\n    font-weight: bolder;\n    padding: 5px .8rem;\n    margin: 0;\n}\n\n.cartWrapper > div{\n    width: 100%;\n    height: 100%;\n}\n\n\n.affixBox1{\n    /* display: box; */\n    /* display: -webkit-box; */\n    /* display: -moz-box; */\n    /* display: -ms-flexbox; */\n    /* display: -webkit-flex; */\n    display: flex;\n    /* -webkit-box-orient: horizontal; */\n    /* -webkit-flex-direction: row; */\n    /* -moz-flex-direction: row; */\n    /* -ms-flex-direction: row; */\n    /* -o-flex-direction: row; */\n    flex-direction: row;\n    background-color: #fff;\n    border-bottom: 2px solid  #ff0090;\n    padding: 10px 15px;\n    justify-content: space-between;\n    -webkit-box-shadow:0 0 10px #0CC;  \n  -moz-box-shadow:0 0 10px #0CC;  \n  box-shadow:0 0 10px #0CC; \n}\n\n.price{\n    color: #ff0090;\n    font-weight: 500;\n    font-size: 20px!important;\n}\n\n.price del{\n    color: #222;\n    text-decoration: line-through!important;\n    font-size: 14px!important;\n    font-weight: 200;\n                                 \n}\n\n.daogou{\n    \n}\n\n.affixBox2{\n    display: flex;\n    flex-direction: row;\n    background-color: #fff;\n    \n}\n.affixItem1{\n    flex-shrink: 1;\n    font-weight: 300;\n    padding: 5px 15px;\n    color: #ff0090;\n}\n\n\n.affixItem2{\n    flex-grow: 1;\n    padding: 5px 15px;\n}\n\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".toStar___sFSxF{\n    background-color: #FC2875;\n    color:#fff;\n    padding: 2px 8px;\n}\n\n.toStar___sFSxF a{\n    color:#FEEE35;\n}\n\n\n.toStarTitle___1u2yM{\n    position: relative;\n}\n\n.toStarTitle___1u2yM h3{\n    display: inline-block;\n    line-height: 0;\n}\n\n.toStarTitle___1u2yM span{\n    display:inline-block;\n    position: absolute;\n    right:0;\n    top: .2em;\n    font-size: .8em;\n    vertical-align: bottom;\n}\n\n\n.toStarContent___Ouy0W img{\n    float: left;\n    margin: 0 5px 5px 10px;\n}\n\n.toStarContent___Ouy0W .rightContent___3PjSH{\n    margin-left: 120px;\n}\n\n.block___2soDg{\n    \n}\n\n.blockTitle___3NvMw{\n    color: #fff;\n    background-color: #636363;\n    font-size: 1rem;\n    font-weight: bolder;\n    padding: 5px .8rem;\n    margin: 0;\n}\n\n.cartWrapper___3jR7N > div{\n    width: 100%;\n    height: 100%;\n}\n\n\n.affixBox1___1yseq{\n    /* display: box; */\n    /* display: -webkit-box; */\n    /* display: -moz-box; */\n    /* display: -ms-flexbox; */\n    /* display: -webkit-flex; */\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    /* -webkit-box-orient: horizontal; */\n    /* -webkit-flex-direction: row; */\n    /* -moz-flex-direction: row; */\n    /* -ms-flex-direction: row; */\n    /* -o-flex-direction: row; */\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    background-color: #fff;\n    border-bottom: 2px solid  #ff0090;\n    padding: 10px 15px;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;  \n  box-shadow:0 0 10px #0CC; \n}\n\n.price___DVwpv{\n    color: #ff0090;\n    font-weight: 500;\n    font-size: 20px!important;\n}\n\n.price___DVwpv del{\n    color: #222;\n    text-decoration: line-through!important;\n    font-size: 14px!important;\n    font-weight: 200;\n                                 \n}\n\n.daogou___1vXkD{\n    \n}\n\n.affixBox2___2e_M4{\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    background-color: #fff;\n    \n}\n\n.affixItem1___3cHq3{\n    -ms-flex-negative: 1;\n        flex-shrink: 1;\n    font-weight: 300;\n    padding: 5px 15px;\n    color: #ff0090;\n}\n\n\n.affixItem2___3FmJB{\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n    padding: 5px 15px;\n}\n\n.affixItem2___3FmJB img{\n    width: 72px;\n}\n\n", "", {"version":3,"sources":["/./containers/Baby/style.css"],"names":[],"mappings":"AAAA;IACI,0BAA0B;IAC1B,WAAW;IACX,iBAAiB;CACpB;;AAED;IACI,cAAc;CACjB;;;AAGD;IACI,mBAAmB;CACtB;;AAED;IACI,sBAAsB;IACtB,eAAe;CAClB;;AAED;IACI,qBAAqB;IACrB,mBAAmB;IACnB,QAAQ;IACR,UAAU;IACV,gBAAgB;IAChB,uBAAuB;CAC1B;;;AAGD;IACI,YAAY;IACZ,uBAAuB;CAC1B;;AAED;IACI,mBAAmB;CACtB;;AAED;;CAEC;;AAED;IACI,YAAY;IACZ,0BAA0B;IAC1B,gBAAgB;IAChB,oBAAoB;IACpB,mBAAmB;IACnB,UAAU;CACb;;AAED;IACI,YAAY;IACZ,aAAa;CAChB;;;AAGD;IACI,mBAAmB;IACnB,2BAA2B;IAC3B,wBAAwB;IACxB,2BAA2B;IAC3B,4BAA4B;IAC5B,qBAAc;IAAd,qBAAc;IAAd,cAAc;IACd,qCAAqC;IACrC,kCAAkC;IAClC,+BAA+B;IAC/B,8BAA8B;IAC9B,6BAA6B;IAC7B,+BAAoB;IAApB,8BAAoB;QAApB,wBAAoB;YAApB,oBAAoB;IACpB,uBAAuB;IACvB,kCAAkC;IAClC,mBAAmB;IACnB,0BAA+B;QAA/B,uBAA+B;YAA/B,+BAA+B;EAGjC,yBAAyB;CAC1B;;AAED;IACI,eAAe;IACf,iBAAiB;IACjB,0BAA0B;CAC7B;;AAED;IACI,YAAY;IACZ,wCAAwC;IACxC,0BAA0B;IAC1B,iBAAiB;;CAEpB;;AAED;;CAEC;;AAED;IACI,qBAAc;IAAd,qBAAc;IAAd,cAAc;IACd,+BAAoB;IAApB,8BAAoB;QAApB,wBAAoB;YAApB,oBAAoB;IACpB,uBAAuB;;CAE1B;;AAED;IACI,qBAAe;QAAf,eAAe;IACf,iBAAiB;IACjB,kBAAkB;IAClB,eAAe;CAClB;;;AAGD;IACI,oBAAa;QAAb,qBAAa;YAAb,aAAa;IACb,kBAAkB;CACrB;;AAED;IACI,YAAY;CACf","file":"style.css","sourcesContent":[".toStar{\n    background-color: #FC2875;\n    color:#fff;\n    padding: 2px 8px;\n}\n\n.toStar a{\n    color:#FEEE35;\n}\n\n\n.toStarTitle{\n    position: relative;\n}\n\n.toStarTitle h3{\n    display: inline-block;\n    line-height: 0;\n}\n\n.toStarTitle span{\n    display:inline-block;\n    position: absolute;\n    right:0;\n    top: .2em;\n    font-size: .8em;\n    vertical-align: bottom;\n}\n\n\n.toStarContent img{\n    float: left;\n    margin: 0 5px 5px 10px;\n}\n\n.toStarContent .rightContent{\n    margin-left: 120px;\n}\n\n.block{\n    \n}\n\n.blockTitle{\n    color: #fff;\n    background-color: #636363;\n    font-size: 1rem;\n    font-weight: bolder;\n    padding: 5px .8rem;\n    margin: 0;\n}\n\n.cartWrapper > div{\n    width: 100%;\n    height: 100%;\n}\n\n\n.affixBox1{\n    /* display: box; */\n    /* display: -webkit-box; */\n    /* display: -moz-box; */\n    /* display: -ms-flexbox; */\n    /* display: -webkit-flex; */\n    display: flex;\n    /* -webkit-box-orient: horizontal; */\n    /* -webkit-flex-direction: row; */\n    /* -moz-flex-direction: row; */\n    /* -ms-flex-direction: row; */\n    /* -o-flex-direction: row; */\n    flex-direction: row;\n    background-color: #fff;\n    border-bottom: 2px solid  #ff0090;\n    padding: 10px 15px;\n    justify-content: space-between;\n    -webkit-box-shadow:0 0 10px #0CC;  \n  -moz-box-shadow:0 0 10px #0CC;  \n  box-shadow:0 0 10px #0CC; \n}\n\n.price{\n    color: #ff0090;\n    font-weight: 500;\n    font-size: 20px!important;\n}\n\n.price del{\n    color: #222;\n    text-decoration: line-through!important;\n    font-size: 14px!important;\n    font-weight: 200;\n                                 \n}\n\n.daogou{\n    \n}\n\n.affixBox2{\n    display: flex;\n    flex-direction: row;\n    background-color: #fff;\n    \n}\n\n.affixItem1{\n    flex-shrink: 1;\n    font-weight: 300;\n    padding: 5px 15px;\n    color: #ff0090;\n}\n\n\n.affixItem2{\n    flex-grow: 1;\n    padding: 5px 15px;\n}\n\n.affixItem2 img{\n    width: 72px;\n}\n\n"],"sourceRoot":"webpack://"}]);
 
 	// exports
 	exports.locals = {

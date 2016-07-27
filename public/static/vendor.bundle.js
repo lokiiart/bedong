@@ -88,7 +88,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "http://0.0.0.0:4000/";
+/******/ 	__webpack_require__.p = "http://192.168.1.102:4000/";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
